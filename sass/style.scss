@@ -1,12 +1,12 @@
-import "variables";
-import "normalize";
-import "layout";
-import "mixins";
+@import "variables";
+@import "normalize";
+@import "layout";
+@import "mixins";
 /* Components */
-import "components/form_field";
+@import "components/form_field";
 
 /* Sections */
-import "section/registration_form";
+@import "section/registration_form";
 
 /* Pages / Views */
-import "pages/registration";
+@import "pages/registration";
