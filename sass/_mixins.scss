@@ -1,0 +1,41 @@
+@mixin text-page-header {
+    font-family: 'Roboto', sans-serif;
+    font-weight: medium;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 42px;
+    color: $color-dark-grey;
+}
+@mixin text-section-header {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 42px;
+    color: $color-dark-grey;
+}
+@mixin text-other {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    line-height: 42px;
+    color: $color-black;
+}
+
+@mixin links($size) {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    color: $color-blue;
+    @if($size == 'large') {
+        font-size: 16px;
+        line-height: 17px;
+    }
+    @else if($size == 'small') {
+        font-size: 13px;
+        line-height: 42px;
+    }
+}
+@mixin margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}

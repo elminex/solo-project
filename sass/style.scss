@@ -10,3 +10,43 @@
 
 /* Pages / Views */
 @import "pages/registration";
+
+/* Grid */
+
+$grid-columns: 12;
+
+@for $i from 1 through $grid-columns {
+    .grid-lg-#{$i} {
+        width: percentage($i / $grid-columns);
+    }
+    .grid-md-#{$i} {
+        width: percentage($i / $grid-columns);
+    }
+    .grid-sm-#{$i} {
+        width: percentage($i / $grid-columns);
+    }
+};
+
+[class*="col-"] {
+    float:left
+}
+
+h1 {
+    @include text-page-header;
+}
+h2 {
+    @include text-section-header;
+}
+p {
+    @include text-other;
+}
+a {
+    @include links(large);
+}
+.link-small {
+    @include links(small);
+}
+.container {
+    width: 1280px;
+    @include margin-auto;
+}
