@@ -8,6 +8,7 @@
 /* Sections */
 @import "section/registration_form";
 @import "section/side-menu";
+@import "section/top-menu";
 
 /* Pages / Views */
 @import "pages/registration";
@@ -26,6 +27,9 @@ $grid-columns: 12;
     .col-sm-#{$i} {
         width: percentage($i / $grid-columns);
     }
+    .col-offset-#{$i} {
+        margin-left: percentage($i / $grid-columns);
+    }
 };
 
 * {
@@ -34,6 +38,13 @@ $grid-columns: 12;
 [class*="col-"] {
     float:left;
 };
+
+.row::before,
+.row::after {
+    content:"";
+    display: table ;
+    clear: both;
+}
 
 h1 {
     @include text-page-header;
@@ -44,17 +55,11 @@ h2 {
 p {
     @include text-other;
 };
-a {
-    @include links(large);
-};
-.link-small {
-    @include links(small);
-};
 .container {
     width: 1280px;
     @include margin-auto;
 };
-.icon {
-    max-width: 20px;
-    max-height: 14px;
-};
+
+body {
+    background-color: $color-background;
+}

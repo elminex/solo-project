@@ -1,0 +1,42 @@
+.top-menu {
+    position: fixed;
+    background-color: $color-white;
+    height: 60px;
+    border-bottom: 1px solid $color-light-grey;
+    border-right: 1px solid $color-light-grey;
+    &__list {
+        float: right;
+        height: 60px;
+        margin: 0;
+        padding: 0;
+    }
+    &__list-item {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    &__wallet {
+        height: 100%;
+        @include text(20px, normal, 42px, $color-dark-grey);
+        border-left: 1px solid $color-light-grey;
+        border-right: 1px solid $color-light-grey;
+    }
+    &__user {
+        height: 100%;
+        border-left: 1px solid $color-light-grey;
+        border-right: 1px solid $color-light-grey;
+    }
+    &__username {
+        @include links('small');
+    }
+    &__icon {
+        margin: 18px;
+        width: 20px;
+        height: 17px;
+        fill: $color-dark-grey;
+    }
+    &__money {
+        margin: 0;
+    }
+}

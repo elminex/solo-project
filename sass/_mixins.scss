@@ -40,6 +40,10 @@
     @else if($size == 'small') {
         font-size: 13px;
         line-height: 42px;
+    }
+    @else if($size == 'chat') {
+        font-size: 14px;
+        line-height: 42px;
     };
 };
 @mixin margin-auto {

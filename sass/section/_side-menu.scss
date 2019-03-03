@@ -1,7 +1,6 @@
 .side-menu {
     background-color: $color-black;
-    @include text-other;
-    color: $color-grey;
+    @include text(14px, lighter, 42px, $color-grey);
     position: fixed;
     height: 100%;
     &__list {
@@ -20,9 +19,10 @@
             };
         };
     };
-
     &__icon {
         fill: $color-grey;
+        max-width: 20px;
+        max-height: 14px;
     };
     &__img-wrapper {
         padding: 18px;
@@ -42,15 +42,19 @@
         padding: 25px 18px;
         border-top: 2px solid $color-dark-grey;
         letter-spacing: -0.28px;
-        text-transform: uppercase;
         @include text(14px, 500, 42px, $color-grey);
         &-list {
             list-style: none;
             margin: 0;
             padding: 0;
-        }
+        };
         &-link {
-            @include text(14px, lighter, 42px, $color-blue);
-        }
+            @include links('chat');
+        };
+        &-portrait {
+            display: block;
+            float:left;
+            margin-right: 10px;
+        };
     };
 }
