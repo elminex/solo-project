@@ -5,20 +5,27 @@
     text-transform: uppercase;
     line-height: 42px;
     color: $color-dark-grey;
-}
+};
 @mixin text-section-header {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 16px;
     line-height: 42px;
     color: $color-dark-grey;
-}
+};
 @mixin text-other {
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
     font-size: 14px;
     line-height: 42px;
     color: $color-black;
+};
+@mixin text($size, $weight, $line, $color) {
+    font-family: 'Roboto', sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+    color: $color;
 }
 
 @mixin links($size) {
@@ -33,9 +40,9 @@
     @else if($size == 'small') {
         font-size: 13px;
         line-height: 42px;
-    }
-}
+    };
+};
 @mixin margin-auto {
     margin-left: auto;
     margin-right: auto;
-}
+};

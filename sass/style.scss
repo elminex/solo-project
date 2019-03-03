@@ -7,6 +7,7 @@
 
 /* Sections */
 @import "section/registration_form";
+@import "section/side-menu";
 
 /* Pages / Views */
 @import "pages/registration";
@@ -16,37 +17,44 @@
 $grid-columns: 12;
 
 @for $i from 1 through $grid-columns {
-    .grid-lg-#{$i} {
+    .col-lg-#{$i} {
         width: percentage($i / $grid-columns);
     }
-    .grid-md-#{$i} {
+    .col-md-#{$i} {
         width: percentage($i / $grid-columns);
     }
-    .grid-sm-#{$i} {
+    .col-sm-#{$i} {
         width: percentage($i / $grid-columns);
     }
 };
 
+* {
+    box-sizing: border-box;
+};
 [class*="col-"] {
-    float:left
-}
+    float:left;
+};
 
 h1 {
     @include text-page-header;
-}
+};
 h2 {
     @include text-section-header;
-}
+};
 p {
     @include text-other;
-}
+};
 a {
     @include links(large);
-}
+};
 .link-small {
     @include links(small);
-}
+};
 .container {
     width: 1280px;
     @include margin-auto;
-}
+};
+.icon {
+    max-width: 20px;
+    max-height: 14px;
+};
