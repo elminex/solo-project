@@ -2,41 +2,43 @@
     position: fixed;
     background-color: $color-white;
     height: 60px;
+    width: calc(1280px - 16.66667%);
     border-bottom: 1px solid $color-light-grey;
     border-right: 1px solid $color-light-grey;
     &__list {
         float: right;
-        height: 60px;
+        height: 100%;
         margin: 0;
         padding: 0;
+        line-height: 60px;
+        list-style-type: none;
     }
     &__list-item {
         display: inline-block;
         margin: 0;
-        padding: 0;
         height: 100%;
     }
     &__wallet {
-        height: 100%;
-        @include text(20px, normal, 42px, $color-dark-grey);
+        @include text(20px, normal, 60px, $color-dark-grey);
         border-left: 1px solid $color-light-grey;
         border-right: 1px solid $color-light-grey;
     }
     &__user {
-        height: 100%;
         border-left: 1px solid $color-light-grey;
         border-right: 1px solid $color-light-grey;
+        line-height: 60px;
+        vertical-align: middle;
     }
     &__username {
         @include links('small');
+        line-height: 60px;
     }
     &__icon {
-        margin: 18px;
         width: 20px;
         height: 17px;
         fill: $color-dark-grey;
-    }
-    &__money {
-        margin: 0;
+        line-height: 60px;
+        display: inline-block;
+        margin: 0 18px;
     }
 }

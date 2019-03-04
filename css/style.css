@@ -133,21 +133,19 @@ template { display: none; }
 
 .side-menu__chat-portrait { display: block; float: left; margin-right: 10px; }
 
-.top-menu { position: fixed; background-color: #FFFFFF; height: 60px; border-bottom: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
+.top-menu { position: fixed; background-color: #FFFFFF; height: 60px; width: calc(1280px - 16.66667%); border-bottom: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
 
-.top-menu__list { float: right; height: 60px; margin: 0; padding: 0; }
+.top-menu__list { float: right; height: 100%; margin: 0; padding: 0; line-height: 60px; list-style-type: none; }
 
-.top-menu__list-item { display: inline-block; margin: 0; padding: 0; height: 100%; }
+.top-menu__list-item { display: inline-block; margin: 0; height: 100%; }
 
-.top-menu__wallet { height: 100%; font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: normal; line-height: 42px; color: #979797; border-left: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
+.top-menu__wallet { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: normal; line-height: 60px; color: #979797; border-left: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
 
-.top-menu__user { height: 100%; border-left: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
+.top-menu__user { border-left: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; line-height: 60px; vertical-align: middle; }
 
-.top-menu__username { font-family: 'Roboto', sans-serif; font-weight: lighter; text-decoration: none; color: #56819F; font-size: 13px; line-height: 42px; }
+.top-menu__username { font-family: 'Roboto', sans-serif; font-weight: lighter; text-decoration: none; color: #56819F; font-size: 13px; line-height: 42px; line-height: 60px; }
 
-.top-menu__icon { margin: 18px; width: 20px; height: 17px; fill: #979797; }
-
-.top-menu__money { margin: 0; }
+.top-menu__icon { width: 20px; height: 17px; fill: #979797; line-height: 60px; display: inline-block; margin: 0 18px; }
 
 /* Pages / Views */
 /* Grid */
@@ -261,4 +259,4 @@ p { font-family: 'Roboto', sans-serif; font-weight: lighter; font-size: 14px; li
 
 .container { width: 1280px; margin-left: auto; margin-right: auto; }
 
-body { background-color: #F5F5F2; }
+body { background-color: #F5F5F2; margin: 0; padding: 0; }
