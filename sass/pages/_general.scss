@@ -1,0 +1,50 @@
+.general {
+    background-color: $color-white;
+    margin: 76px 16px 22px 206px;
+    padding: 0 18px 36px;
+    &__container {
+        margin: 0 auto;
+        max-width: 684px;
+    }
+    &__button {
+        @include button(40px, 'orange');
+    }
+    &__date {
+        width: 100%;
+        padding: 33px 0 36px;
+        margin: 0 -18px 40px;
+        text-align: center;
+        @include border1pxgrey('top');
+        @include border1pxgrey('bottom');
+        &-input {
+            height: 40px;
+        }
+    }
+    &__table {
+        border-collapse: collapse;
+        &-row {
+            @include border1pxgrey('bottom');
+        }
+        &-name {
+            @include text-section-header;
+            padding-right: 190px;
+        }
+        &-name, &-value {
+            @include border1pxgrey('bottom');
+       }
+        &-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 75px;
+        }
+    }
+    &__table:nth-of-type(1) {
+        margin-right: 32px;
+    }
+    &__table:nth-of-type(2) {
+        margin-left: 32px;
+    }
+    &__chart-wrapper{
+        margin: 0 auto;
+    }
+}

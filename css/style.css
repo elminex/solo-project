@@ -109,7 +109,7 @@ template { display: none; }
 
 /* Components */
 /* Sections */
-.side-menu { background-color: #333333; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 42px; color: #bababa; position: fixed; height: 100%; }
+.side-menu { background-color: #333333; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 42px; color: #bababa; position: fixed; height: 100%; width: 188px; }
 
 .side-menu__list { list-style: none; margin: 0 0 15px; padding: 0; }
 
@@ -133,7 +133,7 @@ template { display: none; }
 
 .side-menu__chat-portrait { display: block; float: left; margin-right: 10px; }
 
-.top-menu { position: fixed; background-color: #FFFFFF; height: 60px; width: calc(1280px - 16.66667%); border-bottom: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
+.top-menu { position: fixed; background-color: #FFFFFF; height: 60px; margin-left: 188px; width: 1092px; border-bottom: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
 
 .top-menu__list { float: right; height: 100%; margin: 0; padding: 0; line-height: 60px; list-style-type: none; }
 
@@ -148,6 +148,58 @@ template { display: none; }
 .top-menu__icon { width: 20px; height: 17px; fill: #979797; line-height: 60px; display: inline-block; margin: 0 18px; }
 
 /* Pages / Views */
+.general { background-color: #FFFFFF; margin: 76px 16px 22px 206px; padding: 0 18px 36px; }
+
+.general__container { margin: 0 auto; max-width: 684px; }
+
+.general__button { width: 40px; height: 40px; outline: none; border: none; color: #FFFFFF; font-size: 18px; line-height: 40px; font-family: 'Roboto', sans-serif; font-weight: lighter; background-color: #F58220; }
+
+.general__button:hover { background-color: #FFA200; }
+
+.general__date { width: 100%; padding: 33px 0 36px; margin: 0 -18px 40px; text-align: center; border-top: 1px solid #E3E3E3; border-bottom: 1px solid #E3E3E3; }
+
+.general__date-input { height: 40px; }
+
+.general__table { border-collapse: collapse; }
+
+.general__table-row { border-bottom: 1px solid #E3E3E3; }
+
+.general__table-name { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 16px; line-height: 47px; color: #979797; padding-right: 190px; }
+
+.general__table-name, .general__table-value { border-bottom: 1px solid #E3E3E3; }
+
+.general__table-wrapper { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; margin-bottom: 75px; }
+
+.general__table:nth-of-type(1) { margin-right: 32px; }
+
+.general__table:nth-of-type(2) { margin-left: 32px; }
+
+.general__chart-wrapper { margin: 0 auto; }
+
+.links { background-color: #FFFFFF; margin: 0 16px 22px 206px; padding: 0 18px 36px; }
+
+.links__title { border-bottom: 1px solid #E3E3E3; }
+
+.links__container { margin: 0 auto; max-width: 684px; text-align: center; }
+
+.links__table { text-align: left; width: 100%; border-collapse: collapse; }
+
+.links__table-name { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 16px; line-height: 47px; color: #979797; }
+
+.links__table-link { font-family: 'Roboto', sans-serif; font-weight: lighter; text-decoration: none; color: #56819F; font-size: 16px; line-height: 17px; }
+
+.links__table-row:hover { background-color: #F5F5F2; }
+
+.links__table-row:hover .links__icon { visibility: visible; }
+
+.links__table-row td { border-bottom: 1px solid #E3E3E3; }
+
+.links__icon { display: block; width: 16px; visibility: hidden; }
+
+.links__button { width: 126px; height: 40px; outline: none; border: none; color: #FFFFFF; font-size: 18px; line-height: 40px; font-family: 'Roboto', sans-serif; font-weight: lighter; background-color: #F58220; margin: 23px 0; }
+
+.links__button:hover { background-color: #FFA200; }
+
 /* Grid */
 .col-lg-1 { width: 8.33333%; }
 
@@ -251,9 +303,9 @@ template { display: none; }
 
 .row::before, .row::after { content: ""; display: table; clear: both; }
 
-h1 { font-family: 'Roboto', sans-serif; font-weight: medium; font-size: 16px; text-transform: uppercase; line-height: 42px; color: #979797; }
+h1 { font-family: 'Roboto', sans-serif; font-weight: medium; font-size: 16px; text-transform: uppercase; line-height: 42px; color: #979797; margin: 0; padding: 0; }
 
-h2 { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 16px; line-height: 42px; color: #979797; }
+h2 { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 16px; line-height: 47px; color: #979797; margin: 0; padding: 0; }
 
 p { font-family: 'Roboto', sans-serif; font-weight: lighter; font-size: 14px; line-height: 42px; color: #333333; }
 

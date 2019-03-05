@@ -12,7 +12,8 @@
 
 /* Pages / Views */
 @import "pages/registration";
-
+@import "pages/general";
+@import "pages/links";
 /* Grid */
 
 $grid-columns: 12;
@@ -48,9 +49,13 @@ $grid-columns: 12;
 
 h1 {
     @include text-page-header;
+    margin: 0;
+    padding: 0;
 };
 h2 {
     @include text-section-header;
+    margin: 0;
+    padding: 0;
 };
 p {
     @include text-other;

@@ -10,7 +10,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 16px;
-    line-height: 42px;
+    line-height: 47px;
     color: $color-dark-grey;
 };
 @mixin text-other {
@@ -50,3 +50,35 @@
     margin-left: auto;
     margin-right: auto;
 };
+
+@mixin button($size, $color) {
+    width: $size;
+    height: 40px;
+    outline: none;
+    border: none;
+    color: $color-white;
+    font-size: 18px;
+    line-height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    @if($color == "orange") {
+        background-color: $color-orange;
+        &:hover {
+            background-color: $color-light-orange;
+        };
+    }
+    @else if($color = 'grey') {
+        background-color: $color-dark-grey;
+        &:hover {
+            background-color: $color-light-grey;
+        };
+    }
+};
+@mixin border1pxgrey($position) {
+    @if ($position == 'bottom') {
+        border-bottom: 1px solid $color-light-grey;
+    }
+    @else if ($position == 'top') {
+        border-top: 1px solid $color-light-grey;
+    }
+}

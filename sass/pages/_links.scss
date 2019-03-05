@@ -1,0 +1,44 @@
+.links {
+    background-color: $color-white;
+    margin: 0 16px 22px 206px;
+    padding: 0 18px 36px;
+    &__title {
+        @include border1pxgrey('bottom');
+    }
+    &__container {
+        margin: 0 auto;
+        max-width: 684px;
+        text-align: center;
+    }
+    &__table {
+        text-align: left;
+        width: 100%;
+        border-collapse: collapse;
+        &-name {
+            @include text-section-header;
+        }
+        &-link {
+            @include links('large');
+        }
+        &-row {
+            &:hover {
+                background-color: $color-background;
+            }
+            &:hover .links__icon {
+                visibility: visible;
+            }
+        }
+        &-row td {
+            @include border1pxgrey('bottom');
+        }
+    }
+    &__icon {
+        display: block;
+        width: 16px;
+        visibility: hidden;
+    }
+    &__button {
+        @include button(126px, 'orange');
+        margin: 23px 0;
+    }
+}
