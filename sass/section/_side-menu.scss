@@ -4,6 +4,7 @@
     position: fixed;
     height: 100%;
     width: 188px;
+    z-index: 2;
     &__list {
         list-style: none;
         margin: 0 0 15px;

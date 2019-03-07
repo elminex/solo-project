@@ -51,6 +51,7 @@ h1 {
     @include text-page-header;
     margin: 0;
     padding: 0;
+    display: inline;
 };
 h2 {
     @include text-section-header;
@@ -61,12 +62,18 @@ p {
     @include text-other;
 };
 .container {
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
     @include margin-auto;
 };
 
 body {
-    background-color: $color-background;
+    background-color: $color-background-dark;
     margin: 0;
     padding: 0;
+}
+.content {
+    margin-left: 188px;
+    margin-top: 60px;
+    padding: 16px 18px 0;
 }
