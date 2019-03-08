@@ -1,5 +1,7 @@
 # solo-project
 
+https://elminex.github.io/solo-project/
+
 To-do-list:
 fix styling(paddings, svg sizes, borders), 
 fix input, 
