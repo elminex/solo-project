@@ -69,11 +69,15 @@ p {
 
 body {
     background-color: $color-background-dark;
-    margin: 0;
-    padding: 0;
 }
 .content {
     margin-left: 188px;
-    margin-top: 60px;
+    margin-top: 54px;
     padding: 16px 18px 0;
+}
+@media(max-width: 767px) {
+    .content {
+        margin-left: 60px;
+        margin-top: 0;
+    }
 }

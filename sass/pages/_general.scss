@@ -3,7 +3,7 @@
     margin-bottom: 22px;
     &__container {
         margin: 0 auto;
-        max-width: 684px;
+        max-width: 685px;
     }
     &__button {
         @include button(40px, 'orange');
@@ -48,8 +48,6 @@
         max-height: 100%;
         object-fit: cover;
         display: block;
-    }
-    &__chart-wrapper{
         margin: 0 auto;
     }
 }

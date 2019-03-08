@@ -61,6 +61,7 @@
     line-height: 40px;
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
+    border-radius: 5px;
     @if($color == "orange") {
         background-color: $color-orange;
         &:hover {
