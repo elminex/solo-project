@@ -3,9 +3,7 @@
     @include text(14px, lighter, 42px, $color-grey);
     position: fixed;
     height: 100%;
-    width: $side-menu-mobile-width;
-    overflow: hidden;
-    white-space: nowrap;
+    width: $side-menu-width;
     &__list {
         list-style: none;
         margin-bottom: 15px;
@@ -35,7 +33,7 @@
         justify-content: space-between;
     };
     &__logo {
-        display: none;
+        display: block;
     };
     &__hamburger {
         display: block;
@@ -44,7 +42,7 @@
     };
     &__chat {
         width: 100%;
-        padding: 25px 18px 25px 12px;
+        padding: 25px 18px;
         border-top: 2px solid $color-dark-grey;
         letter-spacing: -0.28px;
         &-list {
@@ -56,7 +54,6 @@
             @include links('chat');
         };
         &-portrait {
-            width: 30px;
             display: block;
             float:left;
             margin-right: 10px;
@@ -64,22 +61,25 @@
         &-title {
             @include text(14px, 500, 42px, $color-grey);
             text-transform: uppercase;
-            display: none;
         };
     };
-    &--expand {
-        width: $side-menu-width;
+};
+@media (max-width: 767px) {
+    .side-menu--small {
+        width: 54px;
+        overflow: hidden;
+        white-space: nowrap;
         & .side-menu__logo {
-            display: block;
+            display: none;
         };
         & .side-menu__chat {
-            padding-left: 18px;
+        padding-left: 12px;
         };
         & .side-menu__chat-portrait {
-            width: auto;
+            width: 30px;
         };
         & .side-menu__chat-title {
-            display: block;
+            display: none;
         };
     };
 };
