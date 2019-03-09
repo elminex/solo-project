@@ -14,9 +14,6 @@
             margin: 0;
         };
     };
-    &__notifications {
-        min-height: 84px;
-    };
     &__username {
         @include links('small');
         line-height: 42px;
@@ -28,6 +25,7 @@
         margin: 0 18px;
     };
     &__notifications {
+        min-height: 84px;
         &-list {
             display: none;
             width: 100%;
@@ -72,8 +70,90 @@
 
 }
 @media (min-width: 992px) {
-
-}
+    .top-menu {
+        position: fixed;
+        top: 0;
+        margin-left: $side-menu-width;
+        height: 60px;
+        width: calc(100% - #{$side-menu-width});
+        max-width: 1092px;
+        border-bottom: 1px solid $color-light-grey;
+        border-right: 1px solid $color-light-grey;
+        &__list {
+            float: right;
+            height: 100%;
+            line-height: 60px;
+            &-item {
+                display: inline-block;
+                height: 100%;
+            };
+        };
+        &__user {
+            border-left: 1px solid $color-light-grey;
+            &name {
+                position: relative;
+                top: -4px;
+                line-height: 60px;
+                padding-right: 18px;
+            };
+        };
+        &__notifications {
+            position: relative;
+            min-height: 60px;
+            &-bell {
+                float: left;
+            }
+            &-list {
+                position: absolute;
+            };
+            &:hover &-list {
+                display: block;
+            };
+            &:hover .top-menu__user {
+                display: none;
+            };
+            &:hover &-close {
+                display: inline-block;
+            };
+            &-close {
+                margin-left: 145px;
+            };
+        };
+        &__wallet {
+            line-height: 60px;
+            border-left: 1px solid $color-light-grey;
+            border-right: 1px solid $color-light-grey;
+            position: relative;
+            &:hover {
+                color: $color-black;
+                background-color: $color-background;
+            };
+            &:hover &-list {
+                display: block;
+            };
+            &:hover .top-menu__arrow-up {
+                display: inline-block;
+            };
+            &:hover .top-menu__arrow-down {
+                display: none;
+            };
+            &-list {
+                position: absolute;
+            };
+        };
+        &__arrow-down {
+            display: inline-block;
+        };
+        &__exit {
+            border-left: 1px solid $color-light-grey;
+        };
+        &--expand {
+        width: calc(100% - #{$side-menu-mobile-width});
+        margin-left: $side-menu-mobile-width;
+        max-width: 1226px;
+        };
+    };
+};
 @media (min-width: 1200px) {
 
 }

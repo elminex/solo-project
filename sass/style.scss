@@ -70,15 +70,18 @@ p {
 
 body {
     background-color: $color-background-dark;
-}
+};
 .content {
-    margin-left: 188px;
-    margin-top: 54px;
+    margin-left: $side-menu-mobile-width;
+    margin-top: 0;
     padding: 16px 18px 0;
-}
-@media(max-width: 767px) {
+};
+@media (min-width: 992px) {
     .content {
-        margin-left: 60px;
-        margin-top: 0;
-    }
-}
+        margin-left: $side-menu-width;
+        margin-top: 54px;
+        &--margin {
+            margin-left: $side-menu-mobile-width;
+        };
+    };
+};

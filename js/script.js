@@ -11,12 +11,19 @@ document.querySelector('.top-menu__notifications-bell').addEventListener('click'
     toggleMenu('notifications')
 });
 
+var sideMenu = document.querySelector('.side-menu');
+
+if (window.matchMedia("(min-width: 992px)").matches) {
+    sideMenu.classList.add('side-menu--expand')
+};
+
 function toggleMenu(target, visible) {
     var topMenu = document.querySelector('.top-menu');
-    var sideMenu = document.querySelector('.side-menu');
+    var content = document.querySelector('.content');
     if (target === 'hamburger') {
         topMenu.classList.toggle('top-menu--expand', visible)
         sideMenu.classList.toggle('side-menu--expand', visible)
+        content.classList.toggle('content--margin', visible)
     }
     else if (target === 'wallet') {
         if (topMenu.classList.contains ('top-menu--expand')) {
