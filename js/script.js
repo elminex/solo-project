@@ -1,4 +1,4 @@
-document.querySelector('.side-menu__hamburger').addEventListener('click', function(e) {
+document.querySelector('.side-menu__button').addEventListener('click', function(e) {
     e.preventDefault();
     toggleMenu('hamburger')
 });

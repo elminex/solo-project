@@ -1,0 +1,61 @@
+.date-picker {
+    width: 100%;
+    padding: 33px 0 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    @include border1pxgrey('top');
+    @include border1pxgrey('bottom');
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    &__icon {
+        height: 15px;
+        width: 15px;
+        fill: $color-white;
+    }
+    &__input {
+        width: 160px;
+        height: 40px;
+        border: 1px solid $color-light-grey;
+        position: relative;
+        &::-webkit-datetime-edit {
+            padding-left: 16px;
+        }
+        &:first-of-type {
+            border-right: none;
+            border-radius: 5px 0 0 5px;
+        }
+        &:last-of-type {
+            margin-left: -5px;
+            border-left: none;
+            border-radius: 0 5px 5px 0;
+            &:after {
+                content:"";
+                height: 28px;
+                width: 1px;
+                @include border1pxgrey("left");
+                position: absolute;
+                top: 5px;
+                left: 0px;
+                z-index: 99;
+            }
+        }
+        @include text (14px, 300, 40px, $color-black);
+        &::-webkit-inner-spin-button { 
+            display: none; 
+        }
+        &::-webkit-calendar-picker-indicator{
+            height: 13px;
+            width: 13px;
+            color: rgba(0, 0, 0, 0);
+            background: url(/images/calendar.png) no-repeat;
+            opacity: 1;
+            border-width: thin;
+            display: block;
+        }
+    }
+    &__button {
+        @include button(40px, 'orange');
+        margin-left: 13px;
+    }
+}

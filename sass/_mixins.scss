@@ -82,4 +82,7 @@
     @else if ($position == 'top') {
         border-top: 1px solid $color-light-grey;
     }
+    @else if ($position == 'left') {
+        border-left: 1px solid $color-light-grey;
+    }
 }

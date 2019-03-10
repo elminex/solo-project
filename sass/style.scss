@@ -4,6 +4,7 @@
 @import "mixins";
 /* Components */
 @import "components/form_field";
+@import "components/date_picker";
 
 /* Sections */
 @import "section/registration_form";
@@ -41,31 +42,23 @@ $grid-columns: 12;
     float:left;
 };
 
-.row::before,
-.row::after {
-    content:"";
-    display: table ;
-    clear: both;
-}
-
 h1 {
+    margin: 0;
+    padding:0;
+}
+h2 {
     @include text-page-header;
     margin: 0;
-    padding: 0;
+    padding: 2px 18px;
     display: inline;
 };
-h2 {
+h3 {
     @include text-section-header;
     margin: 0;
     padding: 0;
 };
 p {
     @include text-other;
-};
-.container {
-    max-width: 1280px;
-    width: 100%;
-    @include margin-auto;
 };
 
 body {

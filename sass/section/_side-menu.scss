@@ -2,6 +2,7 @@
     background-color: $color-black;
     @include text(14px, lighter, 42px, $color-grey);
     position: fixed;
+    top: 0;
     height: 100%;
     width: $side-menu-mobile-width;
     overflow: hidden;
@@ -37,6 +38,15 @@
     &__logo {
         display: none;
     };
+    &__button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0 3px;
+        &:hover {
+            background-color: $color-background;
+        }
+    }
     &__hamburger {
         display: block;
         max-width: 100%;

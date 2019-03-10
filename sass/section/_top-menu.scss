@@ -25,7 +25,6 @@
         margin: 0 18px;
     };
     &__notifications {
-        min-height: 84px;
         &-list {
             display: none;
             width: 100%;
@@ -76,7 +75,6 @@
         margin-left: $side-menu-width;
         height: 60px;
         width: calc(100% - #{$side-menu-width});
-        max-width: 1092px;
         border-bottom: 1px solid $color-light-grey;
         border-right: 1px solid $color-light-grey;
         &__list {
@@ -100,20 +98,20 @@
         &__notifications {
             position: relative;
             min-height: 60px;
-            &-bell {
-                float: left;
-            }
             &-list {
                 position: absolute;
             };
-            &:hover &-list {
-                display: block;
-            };
-            &:hover .top-menu__user {
-                display: none;
-            };
-            &:hover &-close {
-                display: inline-block;
+            &-bell {
+                &:hover .top-menu__notifications-list {
+                    display: block;
+                    width: 238px;
+                };
+                &:hover .top-menu__user {
+                    visibility: hidden;
+                };
+                &:hover .top-menu__notifications-close {
+                    display: inline-block;
+                };
             };
             &-close {
                 margin-left: 145px;
@@ -150,7 +148,6 @@
         &--expand {
         width: calc(100% - #{$side-menu-mobile-width});
         margin-left: $side-menu-mobile-width;
-        max-width: 1226px;
         };
     };
 };
