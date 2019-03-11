@@ -7,6 +7,7 @@
     width: $side-menu-mobile-width;
     overflow: hidden;
     white-space: nowrap;
+    z-index: 30;
     &__list {
         list-style: none;
         margin-bottom: 15px;
@@ -42,7 +43,8 @@
         background-color: transparent;
         border: none;
         outline: none;
-        padding: 0 3px;
+        padding: 0;
+        cursor: pointer;
         &:hover {
             background-color: $color-background;
         }
@@ -78,7 +80,7 @@
         };
     };
     &--expand {
-        width: $side-menu-width;
+        width: $side-menu-mobile-expand-width;
         & .side-menu__logo {
             display: block;
         };
@@ -97,7 +99,11 @@
 
 };
 @media (min-width: 992px) {
-
+    .side-menu {
+        &--expand {
+            width: $side-menu-expand-width;
+        }
+    }
 };
 @media (min-width: 1200px) {
 

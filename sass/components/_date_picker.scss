@@ -1,11 +1,13 @@
 .date-picker {
     width: 100%;
-    padding: 33px 0 36px;
+    padding: 33px 0 26px;
     margin-bottom: 40px;
     text-align: center;
     @include border1pxgrey('top');
     @include border1pxgrey('bottom');
     display: flex;
+    flex-flow: column;
+    align-items: center;
     align-content: center;
     justify-content: center;
     &__icon {
@@ -14,31 +16,12 @@
         fill: $color-white;
     }
     &__input {
-        width: 160px;
         height: 40px;
         border: 1px solid $color-light-grey;
         position: relative;
+        margin-bottom: 10px;
         &::-webkit-datetime-edit {
             padding-left: 16px;
-        }
-        &:first-of-type {
-            border-right: none;
-            border-radius: 5px 0 0 5px;
-        }
-        &:last-of-type {
-            margin-left: -5px;
-            border-left: none;
-            border-radius: 0 5px 5px 0;
-            &:after {
-                content:"";
-                height: 28px;
-                width: 1px;
-                @include border1pxgrey("left");
-                position: absolute;
-                top: 5px;
-                left: 0px;
-                z-index: 99;
-            }
         }
         @include text (14px, 300, 40px, $color-black);
         &::-webkit-inner-spin-button { 
@@ -56,6 +39,37 @@
     }
     &__button {
         @include button(40px, 'orange');
-        margin-left: 13px;
+        margin-bottom: 10px;
+    }
+}
+@media (min-width: 768px) {
+    .date-picker {
+        flex-flow: row;
+        &__input {
+            &:first-of-type {
+                border-right: none;
+                border-radius: 5px 0 0 5px;
+                width: 155px;
+            }
+            &:last-of-type {
+                margin-left: -5px;
+                border-left: none;
+                border-radius: 0 5px 5px 0;
+                width: 176px;
+                &:after {
+                    content:"";
+                    height: 28px;
+                    width: 1px;
+                    @include border1pxgrey("left");
+                    position: absolute;
+                    top: 5px;
+                    left: 0px;
+                    z-index: 3;
+                }
+            }
+        }
+        &__button {
+            margin-left: 13px;
+        }
     }
 }

@@ -10,7 +10,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 16px;
-    line-height: 47px;
+    line-height: 42px;
     color: $color-dark-grey;
 };
 @mixin text-other {
@@ -61,7 +61,7 @@
     line-height: 40px;
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
-    border-radius: 5px;
+    border-radius: 3px;
     @if($color == "orange") {
         background-color: $color-orange;
         &:hover {
@@ -86,3 +86,10 @@
         border-left: 1px solid $color-light-grey;
     }
 }
+@mixin clearfix {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }

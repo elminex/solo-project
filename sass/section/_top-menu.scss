@@ -1,9 +1,8 @@
 .top-menu {
     position: static;
     height: 100%;
-    width: $side-menu-mobile-width;
     margin-left: 0;
-    background-color: $color-white;
+    background-color: $color-black;
     &__list {
         margin: 0;
         padding: 0;
@@ -54,9 +53,11 @@
     &__arrow-down {
         display: none;
     };
+    &__exit {
+        cursor: pointer;
+    }
 };
 .top-menu--expand {
-    width: $side-menu-width;
     &-notifications .top-menu__notifications-list {
         display: block;
     };
@@ -72,9 +73,10 @@
     .top-menu {
         position: fixed;
         top: 0;
-        margin-left: $side-menu-width;
+        margin-left: $side-menu-expand-width;
         height: 60px;
-        width: calc(100% - #{$side-menu-width});
+        background-color: $color-white;
+        width: calc(100% - #{$side-menu-expand-width});
         border-bottom: 1px solid $color-light-grey;
         border-right: 1px solid $color-light-grey;
         &__list {

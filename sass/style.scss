@@ -55,8 +55,13 @@ h2 {
 h3 {
     @include text-section-header;
     margin: 0;
-    padding: 0;
+    padding-left: 18px;
 };
+@media(min-width: 768px) {
+    h3 {
+        padding: 0;
+    }
+}
 p {
     @include text-other;
 };
@@ -71,8 +76,8 @@ body {
 };
 @media (min-width: 992px) {
     .content {
-        margin-left: $side-menu-width;
-        margin-top: 54px;
+        margin-left: $side-menu-expand-width;
+        margin-top: 60px;
         &--margin {
             margin-left: $side-menu-mobile-width;
         };

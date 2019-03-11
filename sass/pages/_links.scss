@@ -8,11 +8,14 @@
         margin: 0 auto;
         max-width: 684px;
         text-align: center;
+        width: 100%;
+        overflow-x: auto;
     }
     &__table {
         text-align: left;
         width: 100%;
         border-collapse: collapse;
+        min-width: 500px;
         &-name {
             @include text-section-header;
         }
@@ -29,6 +32,11 @@
         }
         &-row td {
             @include border1pxgrey('bottom');
+        }
+        &-wrapper {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
         }
     }
     &__icon {
