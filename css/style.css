@@ -108,7 +108,7 @@ template { display: none; }
 [hidden] { display: none; }
 
 /* Components */
-.date-picker { width: 100%; padding: 33px 0 26px; margin-bottom: 40px; text-align: center; border-top: 1px solid #E3E3E3; border-bottom: 1px solid #E3E3E3; display: -ms-flexbox; display: flex; -ms-flex-flow: column; flex-flow: column; -ms-flex-align: center; align-items: center; -ms-flex-line-pack: center; align-content: center; -ms-flex-pack: center; justify-content: center; }
+.date-picker { width: 100%; padding: 33px 0 26px; margin-bottom: 40px; text-align: center; border-bottom: 1px solid #E3E3E3; display: -ms-flexbox; display: flex; -ms-flex-flow: column; flex-flow: column; -ms-flex-align: center; align-items: center; -ms-flex-line-pack: center; align-content: center; -ms-flex-pack: center; justify-content: center; }
 
 .date-picker__icon { height: 15px; width: 15px; fill: #FFFFFF; }
 
@@ -131,6 +131,22 @@ template { display: none; }
   .date-picker__button { margin-left: 13px; } }
 
 /* Sections */
+.personal-data { background-color: #FFFFFF; padding-bottom: 55px; margin-bottom: 22px; }
+
+.personal-data__form { text-align: center; }
+
+.personal-data__inputs { list-style-type: none; text-align: left; padding: 18px 0; border-bottom: 1px solid #E3E3E3; }
+
+.personal-data__inputs label { width: 155px; font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 16px; line-height: 42px; color: #979797; }
+
+.personal-data__inputs li { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -ms-flex-pack: center; justify-content: center; margin-bottom: 15px; }
+
+.personal-data input { width: 310px; border: 1px solid #E3E3E3; border-radius: 3px; outline: none; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 42px; color: #333333; }
+
+.personal-data__button { width: 95px; height: 40px; outline: none; border: none; color: #FFFFFF; font-size: 18px; line-height: 40px; font-family: 'Roboto', sans-serif; font-weight: lighter; border-radius: 3px; background-color: #F58220; }
+
+.personal-data__button:hover { background-color: #FFA200; }
+
 .side-menu { background-color: #333333; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 42px; color: #bababa; position: fixed; top: 0; height: 100%; width: 54px; overflow: hidden; white-space: nowrap; z-index: 30; }
 
 .side-menu__list { list-style: none; margin-bottom: 15px; padding: 0; }
@@ -141,13 +157,13 @@ template { display: none; }
 
 .side-menu__icon { fill: #bababa; width: 20px; max-height: 14px; margin-right: 16px; }
 
-.side-menu__img-wrapper { padding: 20px 18px; display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; }
+.side-menu__img-wrapper { padding: 20px 10px; display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; }
 
-.side-menu__logo { display: none; }
+.side-menu__logo { padding: 0 8px; display: none; }
 
-.side-menu__button { background-color: transparent; border: none; outline: none; padding: 0; cursor: pointer; }
+.side-menu__button { background-color: transparent; border: none; outline: none; padding: 0 8px; cursor: pointer; }
 
-.side-menu__button:hover { background-color: #F5F5F2; }
+.side-menu__button:hover { background-color: #bababa; }
 
 .side-menu__hamburger { display: block; max-width: 100%; height: 15px; }
 
@@ -247,8 +263,6 @@ template { display: none; }
 
 .links { background-color: #FFFFFF; margin-bottom: 22px; }
 
-.links__title { border-bottom: 1px solid #E3E3E3; }
-
 .links__container { margin: 0 auto; max-width: 684px; text-align: center; width: 100%; overflow-x: auto; }
 
 .links__table { text-align: left; width: 100%; border-collapse: collapse; min-width: 500px; }
@@ -272,8 +286,6 @@ template { display: none; }
 .links__button:hover { background-color: #FFA200; }
 
 .banners { background-color: #FFFFFF; margin-bottom: 22px; }
-
-.banners__title { border-bottom: 1px solid #E3E3E3; }
 
 .banners__container { margin: 0 auto; max-width: 684px; text-align: center; }
 
@@ -400,7 +412,7 @@ template { display: none; }
 
 h1 { margin: 0; padding: 0; }
 
-h2 { font-family: 'Roboto', sans-serif; font-weight: normal; font-size: 16px; text-transform: uppercase; line-height: 42px; color: #979797; margin: 0; padding: 2px 18px; display: inline; }
+h2 { font-family: 'Roboto', sans-serif; font-weight: normal; font-size: 16px; text-transform: uppercase; line-height: 42px; color: #979797; margin: 0; padding: 2px 18px; border-bottom: 1px solid #E3E3E3; }
 
 h3 { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 16px; line-height: 42px; color: #979797; margin: 0; padding-left: 18px; }
 

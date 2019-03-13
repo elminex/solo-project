@@ -1,0 +1,34 @@
+.personal-data {
+    background-color: $color-white;
+    padding-bottom: 55px;
+    margin-bottom: 22px;
+    &__form {
+        text-align: center;
+    }
+    &__inputs {
+        list-style-type: none;
+        text-align: left;
+        padding: 18px 0;
+        @include border1pxgrey('bottom');
+        & label {
+            width: 155px;
+            @include text-section-header;
+        }
+        & li {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+    }
+    & input {
+        width: 310px;
+        @include border1pxgrey('all');
+        border-radius: 3px;
+        outline: none;
+        @include text(14px, lighter, 42px, $color-black);
+    }
+    &__button {
+        @include button(95px, 'orange');
+    }
+}

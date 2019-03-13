@@ -3,7 +3,6 @@
     padding: 33px 0 26px;
     margin-bottom: 40px;
     text-align: center;
-    @include border1pxgrey('top');
     @include border1pxgrey('bottom');
     display: flex;
     flex-flow: column;

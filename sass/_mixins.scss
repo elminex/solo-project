@@ -85,6 +85,12 @@
     @else if ($position == 'left') {
         border-left: 1px solid $color-light-grey;
     }
+    @else if ($position == 'right') {
+        border-left: 1px solid $color-light-grey;
+    }
+    @else if ($position == 'all') {
+        border: 1px solid $color-light-grey;
+    }
 }
 @mixin clearfix {
     &:after {

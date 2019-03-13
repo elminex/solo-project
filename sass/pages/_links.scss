@@ -1,9 +1,6 @@
 .links {
     background-color: $color-white;
     margin-bottom: 22px;
-    &__title {
-        @include border1pxgrey('bottom');
-    }
     &__container {
         margin: 0 auto;
         max-width: 684px;

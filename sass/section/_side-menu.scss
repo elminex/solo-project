@@ -32,21 +32,22 @@
 
     };
     &__img-wrapper {
-        padding: 20px 18px;
+        padding: 20px 10px;
         display: flex;
         justify-content: space-between;
     };
     &__logo {
+        padding: 0 8px;
         display: none;
     };
     &__button {
         background-color: transparent;
         border: none;
         outline: none;
-        padding: 0;
+        padding: 0 8px;
         cursor: pointer;
         &:hover {
-            background-color: $color-background;
+            background-color: $color-grey;
         }
     }
     &__hamburger {
