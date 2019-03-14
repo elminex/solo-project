@@ -7,15 +7,16 @@
 @import "components/date_picker";
 
 /* Sections */
-@import "section/personal_data";
 @import "section/side-menu";
 @import "section/top-menu";
 
 /* Pages / Views */
+@import "pages/personal_data";
 @import "pages/registration";
 @import "pages/general";
 @import "pages/links";
 @import "pages/banners";
+@import "pages/postback";
 /* Grid */
 
 $grid-columns: 12;

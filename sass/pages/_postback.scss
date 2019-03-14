@@ -1,0 +1,57 @@
+.postback {
+    background-color: $color-white;
+    padding-bottom: 55px;
+    margin: 0 auto;
+    margin-bottom: 22px;
+    max-width: 1056px;
+    width: 100%;
+    &__text {
+        padding-left: 18px;
+        @include text(14px, lighter, 42px, $color-black);
+    }
+    &__row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 0 18px;
+        margin-bottom: 25px;
+        &:nth-of-type(2), &:last-of-type {
+            @include border1pxgrey('bottom');
+        }
+        &:nth-of-type(2) {
+            padding-bottom: 36px;
+        }
+        &:last-of-type {
+            align-content: stretch;
+        }
+    }
+    &__textarea {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    &__options {
+        display: flex;
+        flex-flow: column nowrap;
+        max-width: 330px;
+        width: 100%;
+    }
+    &__status {
+        display: flex;
+        flex-flow: column nowrap;
+        height: 176px;
+        overflow-x: auto;
+        &-wrapper {
+            width: 50%;
+        }
+        &-checkbox-label {
+            @include text-other;
+        }
+    }
+    &__range {
+        padding-left: 18px;
+        width: 50%;
+        &-input {
+            width: 100%;
+        }
+    }
+}

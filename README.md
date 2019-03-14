@@ -3,15 +3,9 @@
 https://elminex.github.io/solo-project/
 
 To-do-list:
-fix styling(paddings, svg sizes, borders), 
-fix input, 
-make media queries on layout for mobile first,
-make tables responsive,
-add JS so that the menus work,
+fix styling(paddings, svg sizes, borders),
+rework range input style,
+fix postback style.
 make additional content.
 
-
-style svg separately(??),
-find a place to use grid(??),
-rethink html for menus.
-
+style svg separately(??)

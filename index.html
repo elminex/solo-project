@@ -607,6 +607,87 @@
                     <button class="personal-data__button" type="submit">Save</button>
                 </form>
             </section>
+            <section class="postback">
+                <h2>New postback</h2>
+                <p class="postback__text">You can insert some parameters in this postback:</p>
+                <form>
+                    <div class="postback__row">
+                        <div class="postback__textarea">
+                            <label>Signup</label>
+                            <textarea name="postback-signup" cols="58" rows="8"></textarea>
+                        </div>
+                        <div class="postback__textarea">
+                            <label>Deposit</label>
+                            <textarea name="postback-signup" cols="58" rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="postback__row">
+                        <div class="postback__options">
+                            <label>Postback type</label>
+                            <select>
+                                <option>option1</option>
+                                <option>option2</option>
+                                <option>option3</option>
+                                <option>option4</option>
+                            </select>
+                        </div>
+                        <div class="postback__options">
+                            <label>To countries</label>
+                            <select>
+                                <option>option1</option>
+                                <option>option2</option>
+                                <option>option3</option>
+                                <option>option4</option>
+                            </select>
+                        </div>
+                        <div class="postback__options">
+                            <label>Sending options</label>
+                            <select>
+                                <option>option1</option>
+                                <option>option2</option>
+                                <option>option3</option>
+                                <option>option4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="postback__row">
+                        <div class="postback__status-wrapper">
+                            <h3><span>not</span> send statuses</h3>
+                            <div class="postback__status">
+                                <label class="postback__status-checkbox-label">
+                                    <input type="checkbox" name="checkNumber">
+                                    checkNumber
+                                </label>
+                                <label class="postback__status-checkbox-label">
+                                    <input type="checkbox" name="noAnswer">
+                                    noAnswer
+                                </label>
+                                <label class="postback__status-checkbox-label">
+                                    <input type="checkbox" name="noCall">
+                                    noCall
+                                </label>
+                                <label class="postback__status-checkbox-label">
+                                    <input type="checkbox" name="callAgain">
+                                    callAgain
+                                </label>
+                                <label class="postback__status-checkbox-label">
+                                    <input type="checkbox" name="nextOption1">
+                                    nextOption1
+                                </label>
+                                <label class="postback__status-checkbox-label">
+                                    <input type="checkbox" name="nextOption2">
+                                    nextOption2
+                                </label>
+                            </div>
+                        </div>
+                        <div class="postback__range">
+                            <h3>Send after</h3>
+                            <input class="postback__range-input" type="range" name="time" min="0" max="168" step="1">
+                        </div>
+                    </div>
+                    <button>Create Pixel</button>
+                </form>
+            </section>
         </main>
         <script src="js/script.js"></script>
     </body>
