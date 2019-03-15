@@ -175,7 +175,7 @@
                     </div>
                     <h3>Earnings chart</h3>
                     <div class="general__chart-wrapper">
-                        <img class="general__chart" src="images/graph.png">
+                        <img class="general__chart" src="images/graph.png" alt="chart">
                     </div>
                 </div>
             </section>
@@ -612,84 +612,94 @@
                 <p class="postback__text">You can insert some parameters in this postback:</p>
                 <form>
                     <div class="postback__row">
-                        <div class="postback__textarea">
-                            <label>Signup</label>
-                            <textarea name="postback-signup" cols="58" rows="8"></textarea>
-                        </div>
-                        <div class="postback__textarea">
-                            <label>Deposit</label>
-                            <textarea name="postback-signup" cols="58" rows="8"></textarea>
-                        </div>
-                    </div>
-                    <div class="postback__row">
-                        <div class="postback__options">
-                            <label>Postback type</label>
-                            <select>
-                                <option>option1</option>
-                                <option>option2</option>
-                                <option>option3</option>
-                                <option>option4</option>
-                            </select>
-                        </div>
-                        <div class="postback__options">
-                            <label>To countries</label>
-                            <select>
-                                <option>option1</option>
-                                <option>option2</option>
-                                <option>option3</option>
-                                <option>option4</option>
-                            </select>
-                        </div>
-                        <div class="postback__options">
-                            <label>Sending options</label>
-                            <select>
-                                <option>option1</option>
-                                <option>option2</option>
-                                <option>option3</option>
-                                <option>option4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="postback__row">
-                        <div class="postback__status-wrapper">
-                            <h3><span>not</span> send statuses</h3>
-                            <div class="postback__status">
-                                <label class="postback__status-checkbox-label">
-                                    <input type="checkbox" name="checkNumber">
-                                    checkNumber
-                                </label>
-                                <label class="postback__status-checkbox-label">
-                                    <input type="checkbox" name="noAnswer">
-                                    noAnswer
-                                </label>
-                                <label class="postback__status-checkbox-label">
-                                    <input type="checkbox" name="noCall">
-                                    noCall
-                                </label>
-                                <label class="postback__status-checkbox-label">
-                                    <input type="checkbox" name="callAgain">
-                                    callAgain
-                                </label>
-                                <label class="postback__status-checkbox-label">
-                                    <input type="checkbox" name="nextOption1">
-                                    nextOption1
-                                </label>
-                                <label class="postback__status-checkbox-label">
-                                    <input type="checkbox" name="nextOption2">
-                                    nextOption2
-                                </label>
+                        <div class="postback__container">
+                                <div class="postback__textarea">
+                                    <label class="postback__label-grey">Signup</label>
+                                    <textarea class="postback__textarea-input" name="postback-signup" cols="58" rows="8"></textarea>
+                                </div>
+                                <div class="postback__textarea">
+                                    <label class="postback__label-grey">Deposit</label>
+                                    <textarea class="postback__textarea-input" name="postback-deposit" cols="58" rows="8"></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="postback__range">
-                            <h3>Send after</h3>
-                            <div class="sliderfill"></div>
-                            <input class="postback__range-input" type="range" value="104" name="time" min="0" max="168" step="1">
-                            <span class="postback__range-value">123</span>
-                            <div class="sliderthumb"></div>
-                            <div class="slidervalue">50</div>
-                        </div>
                     </div>
-                    <button>Create Pixel</button>
+                    <div class="postback__row postback__row-options-wrapper">
+                            <div class="postback__container">
+                                <div class="postback__options">
+                                    <label class="postback__label-grey">Postback type</label>
+                                    <select class="postback__dropdown">
+                                        <option>option1</option>
+                                        <option>option2</option>
+                                        <option>option3</option>
+                                        <option>option4</option>
+                                    </select>
+                                </div>
+                                <div class="postback__options">
+                                    <label class="postback__label-grey">To countries</label>
+                                    <select class="postback__dropdown">
+                                        <option>option1</option>
+                                        <option>option2</option>
+                                        <option>option3</option>
+                                        <option>option4</option>
+                                    </select>
+                                </div>
+                                <div class="postback__options">
+                                    <label class="postback__label-grey">Sending options</label>
+                                    <select class="postback__dropdown">
+                                        <option>option1</option>
+                                        <option>option2</option>
+                                        <option>option3</option>
+                                        <option>option4</option>
+                                    </select>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="postback__row">
+                            <div class="postback__container">
+                                <div class="postback__status-wrapper">
+                                    <h3><span class="postback--red-text">not</span> send statuses</h3>
+                                    <div class="postback__status">
+                                        <label class="postback__status-checkbox-label">
+                                            <input type="checkbox" name="checkNumber">
+                                            checkNumber
+                                        </label>
+                                        <label class="postback__status-checkbox-label">
+                                            <input type="checkbox" name="noAnswer">
+                                            noAnswer
+                                        </label>
+                                        <label class="postback__status-checkbox-label">
+                                            <input type="checkbox" name="noCall">
+                                            noCall
+                                        </label>
+                                        <label class="postback__status-checkbox-label">
+                                            <input type="checkbox" name="callAgain">
+                                            callAgain
+                                        </label>
+                                        <label class="postback__status-checkbox-label">
+                                            <input type="checkbox" name="nextOption1">
+                                            nextOption1
+                                        </label>
+                                        <label class="postback__status-checkbox-label">
+                                            <input type="checkbox" name="nextOption2">
+                                            nextOption2
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="postback__range">
+                                    <h3>Send after</h3>
+                                    <div class="rangewrapper">
+                                        <div class="sliderfill">
+                                            <input class="postback__range-input" type="range" value="104" name="time" min="0" max="168" step="1">
+                                        </div>
+                                        <div class="sliderthumb"></div>
+                                        <div class="slidervalue">104</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>>
+                    <div class="postback__button-wrapper">
+                        <button class="postback__button">Create Pixel</button>
+                    </div>
                 </form>
             </section>
         </main>

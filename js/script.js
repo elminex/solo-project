@@ -39,78 +39,58 @@ function toggleMenu(target, visible) {
         }
     }
 }
-/*      SLIDER VALUE
 
-var myRange = document.querySelector('.postback__range-input');
-var myValue = document.querySelector('.postback__range-value');
-var myUnits = 'myUnits';
-var off = myRange.offsetWidth / (parseInt(myRange.max) - parseInt(myRange.min));
-var px =  ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetParent.offsetWidth / 2);
-
-  myValue.style.left = px + 'px';
-  myValue.style.top = myRange.offsetHeight + 'px';
-  myValue.innerHTML = myRange.value + ' ' + myUnits;
-
-  myRange.oninput =function(){
-    let px = ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetWidth / 2);
-    myValue.innerHTML = myRange.value + ' ' + myUnits;
-    myValue.style.left = px + 'px';
-  };
+//    Range slider
 
 
+let sliders, sliderfills, thumbs, slidervalues;
+let initialValue = [104,50,63,88]; //initial values for the sliders
 
- let slider, sliderfill, thumb, slidervalue;
- let initialValue = 104; //initial values for the sliders
- 
- document.addEventListener('DOMContentLoaded', function (e) { init();});
- 
- function init(){
-   slider = document.querySelectorAll(".postback__range-input");
-   sliderfill = document.querySelectorAll(".sliderfill");
-   thumb = document.querySelectorAll(".sliderthumb");
-   slidervalue = document.querySelectorAll(".slidervalue");
-   // We need to change slider appearance to respond to both input and change events. 
-   for (let i=0;i<sliders.length;i++){
-     sliders[i].addEventListener("input",function(e){updateSlider(i,sliders[i].value);});
-     sliders[i].addEventListener("change",function(e){updateSlider(i,sliders[i].value);});
-     //set initial values for the sliders
-     sliders[i].value = initialValue[i];
-     //update each slider
-     updateSlider(i,sliders[i].value);
-   }
- }
- function updateSlider(fillindex,val){
-   //sets the text display and location for each thumb and the slider fill  
-   let min = Number(sliders[fillindex].getAttribute("min"));
-   let max = Number(sliders[fillindex].getAttribute("max"));
-   let pc = (val/(max-min)) * 100
-   setThumbText(slidervalues[fillindex],val,pc);
-   setThumb(thumbs[fillindex],pc);
-   setSliderFill(sliderfills[fillindex],pc);
- }
- function setThumbText(elem,val,pc){
-   let size = getComputedStyle(elem).getPropertyValue("--thumbsize");
-   let newx = `calc(${pc}% - ${parseInt(size)/2}px)`;
-   elem.style.left = newx;
-   elem.innerHTML = val;
- }
- function setThumb(elem,val){
-   let size = getComputedStyle(elem).getPropertyValue("--thumbsize");
-   let newx = `calc(${val}% - ${parseInt(size)/2}px)`;
-   elem.style.left = newx;
-   let max = 100;
-   let degrees = 360 * (val/max);
-   let rotation = `rotate(${degrees}deg)`;
-     elem.style.transform = rotation;
- }
- function setSliderFill(elem,val){
-   let fillcolor = getComputedStyle(elem).getPropertyValue("--accentcolor");
-   let alphafillcolor = getComputedStyle(elem).getPropertyValue("--accentcoloralpha");
-   // we create a linear gradient with a color stop based on the slider value
-   let gradient = `linear-gradient(to right, ${fillcolor} 0%, 
- ${alphafillcolor} ${val}%, 
- rgba(255,255,255,0.1) ${Number(val) + 1}%, 
- rgba(255,255,255,0)  100%)`;
-   elem.style.backgroundImage = gradient;
- }
- */
+document.addEventListener('DOMContentLoaded', function (e) { init();});
+
+function init(){
+  sliders = document.querySelectorAll(".postback__range-input");
+  sliderfills = document.querySelectorAll(".sliderfill");
+  thumbs = document.querySelectorAll(".sliderthumb");
+  slidervalues = document.querySelectorAll(".slidervalue");
+  /* We need to change slider appearance to respond to both input and change events. */
+  for (let i=0;i<sliders.length;i++){
+    sliders[i].addEventListener("input",function(e){updateSlider(i,sliders[i].value);});
+    sliders[i].addEventListener("change",function(e){updateSlider(i,sliders[i].value);});
+    //set initial values for the sliders
+    sliders[i].value = initialValue[i];
+    //update each slider
+    updateSlider(i,sliders[i].value);
+  }
+}
+function updateSlider(fillindex,val){
+
+  //sets the text display and location for each thumb and the slider fill  
+  let min = Number(sliders[fillindex].getAttribute("min"));
+  let max = Number(sliders[fillindex].getAttribute("max"));
+  let pc = (val/(max-min)) * 100
+  setThumbText(slidervalues[fillindex],val,pc);
+  setThumb(thumbs[fillindex],pc);
+  setSliderFill(sliderfills[fillindex],pc);
+}
+function setThumbText(elem,val,pc){
+  let size = 60;
+  let newx = `calc(${pc}% - ${parseInt(size)/2}px)`;
+  elem.style.left = newx;
+  elem.innerHTML = val + ' hours';
+}
+function setThumb(elem,val){
+  let size = 22;
+  let newx = `calc(${val}% - ${parseInt(size)/2}px)`;
+  elem.style.left = newx;
+}
+function setSliderFill(elem,val){
+  let alphafillcolor = getComputedStyle(elem).getPropertyValue("color");
+
+  // we create a linear gradient with a color stop based on the slider value
+  let gradient = `linear-gradient(to right, 
+${alphafillcolor} ${val}%, 
+rgba(255,255,255,0.1) ${Number(val) + 1}%, 
+rgba(255,255,255,0)  100%)`;
+  elem.style.backgroundImage = gradient;
+}

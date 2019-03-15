@@ -1,33 +1,37 @@
 .postback {
     background-color: $color-white;
-    padding-bottom: 55px;
-    margin: 0 auto;
+    padding-bottom: 22px;
     margin-bottom: 22px;
-    max-width: 1056px;
     width: 100%;
     &__text {
-        padding-left: 18px;
         @include text(14px, lighter, 42px, $color-black);
+        width: 100%;
+        max-width: 1056px;
+        margin: 0 auto;
     }
-    &__row {
+    &__container {
+        width: 100%;
+        max-width: 1056px;
+        margin: 0 auto;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+    }
+    &__row {
         padding: 0 18px;
-        margin-bottom: 25px;
-        &:nth-of-type(2), &:last-of-type {
+        &-options-wrapper {
+            padding-bottom: 35px;
+            padding-top: 12px;
             @include border1pxgrey('bottom');
-        }
-        &:nth-of-type(2) {
-            padding-bottom: 36px;
-        }
-        &:last-of-type {
-            align-content: stretch;
         }
     }
     &__textarea {
         display: flex;
         flex-flow: column wrap;
+        &-input {
+            @include border1pxgrey('all');
+            border-radius: 3px;
+        }
     }
     &__options {
         display: flex;
@@ -50,5 +54,32 @@
     &__range {
         padding-left: 18px;
         width: 50%;
+        @include border1pxgrey('left');
+    }
+    &__label-grey {
+        @include text-section-header;
+    }
+    &__dropdown {
+        @include text-other;
+        height: 40px;
+        padding-left: 12px;
+        @include border1pxgrey('all');
+        border-radius: 3px;
+        & option {
+            @include text-other;
+        }
+    }
+    &__button {
+        @include button(125px, 'orange');
+        &-wrapper {
+            @include border1pxgrey('top');
+            text-align: right;
+            margin-right: 23px;
+            padding-top: 18px;
+        }
+    }
+    &--red-text {
+        color: $color-red;
+        text-transform: uppercase;
     }
 }
