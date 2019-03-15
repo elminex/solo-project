@@ -93,4 +93,26 @@ ${alphafillcolor} ${val}%,
 rgba(255,255,255,0.1) ${Number(val) + 1}%, 
 rgba(255,255,255,0)  100%)`;
   elem.style.backgroundImage = gradient;
+};
+
+
+//  popups
+
+let login = document.querySelector('.top-menu__username');
+login.addEventListener("click", function(){
+  openPopup('login');
+});
+
+window.onclick = function(event) {
+  let popup = document.querySelector('#login');
+  if (event.target == popup) {
+    popup.style.display = 'none';
+  }
+}
+
+function openPopup(element) {
+  let loginPopup = document.querySelector('#login');
+  if(element === 'login') {
+    loginPopup.style.display = 'block';
+  }
 }

@@ -703,6 +703,55 @@
                 </form>
             </section>
         </main>
+        <!-- Pop-ups-->
+        <div class="popup" id="login">
+            <div class="popup-login">
+                <h2>login</h2>
+                <div class="popup-login__input-wrapper">
+                    <div class="popup-login__username">
+                        <input class="popup-login__input" type="text" name="login">
+                        <svg class="popup-login__username-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 15 16" style="enable-background:new 0 0 15 16;" xml:space="preserve">
+                        <path d="M7.5,9c2.2,0,4-1.8,4-4c0-2.2-1.8-4-4-4s-4,1.8-4,4C3.5,7.2,5.3,9,7.5,9z M7.5,2c1.7,0,3,1.3,3,3s-1.3,3-3,3s-3-1.3-3-3
+                            S5.8,2,7.5,2z M7.5,10c-3,0-5.6,2-6.3,4.9l1,0.3C2.8,12.7,5,11,7.5,11c2.5,0,4.7,1.7,5.3,4.1l1-0.3C13.1,12,10.5,10,7.5,10z"/>
+                        </svg>
+                    </div>
+                    <div class="popup-login__password">
+                        <input class="popup-login__input" type="password" name="password">
+                        <svg class="popup-login__password-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 22 14" style="enable-background:new 0 0 22 14;" xml:space="preserve">
+                            <path d="M21.1,7.4l-2.6-2.6l-2,2L14.7,5h-2.1c-1-2.8-3.8-4.4-6.8-3.9C3.5,1.5,1.6,3.4,1.1,5.7c-0.4,1.8,0.1,3.7,1.2,5.1
+                            C3.5,12.2,5.2,13,7,13c2.2,0,4.1-1.1,5.2-3h7.9c0.6,0,1.1-0.4,1.4-0.9C21.7,8.5,21.6,7.9,21.1,7.4z M20.5,8.7c0,0.1-0.2,0.3-0.5,0.3
+                            h-8.5l-0.1,0.3C10.6,11,8.9,12,7,12c-1.5,0-2.9-0.7-3.9-1.8c-1-1.2-1.3-2.7-1-4.2C2.5,4,4.1,2.5,6,2.1C6.4,2,6.7,2,7,2
+                            c2.2,0,4.2,1.4,4.8,3.6L11.9,6h2.4l2.2,2.2l2-2l1.9,1.9C20.7,8.4,20.6,8.6,20.5,8.7z M5.5,4.5C4.1,4.5,3,5.6,3,7s1.1,2.5,2.5,2.5
+                            S8,8.4,8,7S6.9,4.5,5.5,4.5z M5.5,8.5C4.7,8.5,4,7.8,4,7s0.7-1.5,1.5-1.5S7,6.2,7,7S6.3,8.5,5.5,8.5z"/>
+                        </svg>
+                    </div>
+                    <button class="popup-login__button" type="submit">Enter</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup popup-exit" id="exit">
+            <h3>Do you really want to Quit?</h3>
+            <div class="popup-exit__button-wrapper">
+                <button class="popup-exit__btn-cancel">Cancel</button>
+                <button class="popup-exit__btn-quit">Quit</button>
+            </div>
+        </div>
+        <div class="popup popup-chat" id="chat">
+            <h2>Online chat with your personal manager</h2>
+            <span class="popup-chat__close">&times;</span>
+            <div class="popup-chat__manager">
+                <img class="popup-chat__manager-img" src="images/manager.png" alt="manager">
+                <span class="popup-chat__manager-name">Michael E.</span>
+                <span class="popup-chat__manager-status">Online</span>
+            </div>
+            <div class="popup-chat__output"></div>
+            <div class="popup-chat__input">
+                <input type="text" name="chat-input">
+                <button class="popup-chat__btn-send">Send</button>
+            </div>
+        </div>
         <script src="js/script.js"></script>
     </body>
 </html>
