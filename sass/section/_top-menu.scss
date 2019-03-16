@@ -90,12 +90,32 @@
         };
         &__user {
             border-left: 1px solid $color-light-grey;
+            cursor: pointer;
+            position: relative;
+            &:hover .top-menu__user-tooltip {
+                visibility: visible;
+            }
             &name {
                 position: relative;
                 top: -4px;
                 line-height: 60px;
                 padding-right: 18px;
+                
             };
+            &-tooltip {
+                @include text(14px,lighter, 20px, $color-white);
+                    visibility: hidden;
+                    width: 100px;
+                    background-color: black;
+                    text-align: center;
+                    padding: 5px 0;
+                    border-radius: 6px;
+                    position: absolute;
+                    top: 100%;
+                    left: 50%; 
+                    margin-left: -50px;
+                    z-index: 99;
+            }
         };
         &__notifications {
             position: relative;
@@ -146,6 +166,24 @@
         };
         &__exit {
             border-left: 1px solid $color-light-grey;
+            position: relative;
+            &:hover .top-menu__exit-tooltip {
+                visibility: visible;
+            }
+            &-tooltip {
+                @include text(14px,lighter, 20px, $color-white);
+                    visibility: hidden;
+                    width: 100px;
+                    background-color: black;
+                    text-align: center;
+                    padding: 5px 0;
+                    border-radius: 6px;
+                    position: absolute;
+                    top: 100%;
+                    left: 50%; 
+                    margin-left: -50px;
+                    z-index: 99;
+            }
         };
         &--expand {
         width: calc(100% - #{$side-menu-mobile-width});

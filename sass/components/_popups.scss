@@ -8,11 +8,13 @@
     height: 100%;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-    padding-top: 290px;
     &-login {
-        margin: 0 auto;
         width: 750px;
         background-color: $color-white;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         &__input {
             @include border1pxgrey('all');
             border-radius: 3px;
@@ -49,6 +51,131 @@
                 left: 16px;
                 fill: $color-grey;
             }
+        }
+    }
+    &-exit {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 360px;
+        background-color: $color-white;
+        &__heading {
+            padding: 13px 23px;
+        }
+        &__button-wrapper {
+            @include border1pxgrey('top');
+            padding: 20px;
+            text-align: right;
+        }
+        &__btn-cancel {
+            @include button(95px, 'grey');
+        }
+        &__btn-quit {
+            @include button(95px, 'orange');
+            margin-left: 20px;
+        }
+    }
+    &-chat {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1074px;
+        background-color: $color-white;
+        &__close {
+            @include text (30px, normal, 42px, $color-grey);
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 18px;
+        }
+        &__manager {
+            height: 100%;
+            padding: 10px 0;
+            @include border1pxgrey('bottom');
+            @include clearfix;
+            &-img {
+                display: block;
+                &-wrapper {
+                    margin: 0 18px;
+                    width: 70px;
+                    height: 70px;
+                    float: left;
+                }
+            }
+            &-name {
+                @include text(30px, medium, 42px, $color-black);
+                display: block;
+            }
+            &-status {
+                @include text(12px, lighter, 18px, $color-light-grey);
+                background-color: $color-green;
+                padding: 0 5px;
+                border-radius: 5px;
+            }
+        }
+        &__output {
+            height: 316px;
+            @include border1pxgrey('bottom');
+            padding: 15px 18px;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+        }
+        &__msg {
+            @include text(14px, lighter, 40px, $color-black);
+            position: relative;
+            margin-bottom: 15px;
+            padding: 0 12px;
+            display: inline-block;
+            &--light {
+                background-color: $color-background;
+                color: $color-black;
+                border-radius: 0 3px 3px;
+                &:after {
+                    content:'';
+                    position: absolute;
+                    top: -8px;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border-bottom: 8px solid $color-background;
+                    border-right: 8px solid transparent;
+                }
+            }
+            &--dark {
+                background-color: $color-grey;
+                color: $color-white;
+                border-radius: 3px 3px 0;
+                &:after {
+                    content:'';
+                    position: absolute;
+                    bottom: -8px;
+                    right: 0;
+                    width: 0;
+                    height: 0;
+                    border-top: 8px solid $color-grey;
+                    border-left: 8px solid transparent;
+                }
+            }
+        }
+
+        &__input {
+            height: 40px;
+            @include text(14px, lighter, 40px, $color-grey);
+            width: 100%;
+            @include border1pxgrey('all');
+            border-radius: 3px;
+            &-wrapper {
+                display: flex;
+                align-content: center;
+                padding: 18px;
+            }
+        }
+        &__btn-send {
+            @include button(95px, 'orange');
+            margin-left: 18px;
         }
     }
 }

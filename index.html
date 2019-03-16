@@ -72,10 +72,11 @@
                             </li>
             </ul>
             <div class="side-menu__chat">
-                            <span class="side-menu__chat-title">your manager</span>
-                            <ul class="side-menu__chat-list">
-                                <li class="side-menu__chat-list-item"><img class="side-menu__chat-portrait" src="images/manager.png" alt="portrait"><a class="side-menu__chat-link" href="#">Mikhael E.</a> </li>
-                            </ul>
+                <span class="side-menu__chat-title">your manager</span>
+                <div class="side-menu__chat-link">
+                    <img class="side-menu__chat-portrait" src="images/manager.png" alt="portrait">
+                    Mikhael E.
+                </div>
             </div>
             <div class="top-menu">
                 <ul class="top-menu__list">
@@ -118,6 +119,7 @@
                     </li>
                     <li class="top-menu__list-item">
                         <div class="top-menu__user">
+                            <span class="top-menu__user-tooltip">Login</span>
                                 <svg class="top-menu__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve">
                                 <path d="M9.5,4C7.6,4,6,5.6,6,7.5S7.6,11,9.5,11S13,9.4,13,7.5S11.4,4,9.5,4z M9.5,10C8.1,10,7,8.9,7,7.5S8.1,5,9.5,5S12,6.1,12,7.5
@@ -132,7 +134,8 @@
                             <polygon points="12.4,1.4 11.6,0.6 6.5,5.8 1.4,0.6 0.6,1.4 5.8,6.5 0.6,11.6 1.4,12.4 6.5,7.2 11.6,12.4 12.4,11.6 7.2,6.5 "/>
                         </svg>
                     </li>
-                    <li class="top-menu__list-item top-menu__exit">
+                    <li class="top-menu__list-item top-menu__exit" id="logout-button">
+                        <span class="top-menu__exit-tooltip">Logout</span>
                         <svg class="top-menu__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 19 15" style="enable-background:new 0 0 19 15;" xml:space="preserve">
                         <path d="M13.9,3.1l-0.7,0.7L16.3,7H3v1h13.3l-3.1,3.1l0.7,0.7l4.4-4.4L13.9,3.1z M10,14H1V1h9v3h1V0H0v15h11v-4h-1V14z"/>
@@ -696,7 +699,7 @@
                                     </div>
                                 </div>
                             </div>
-                    </div>>
+                    </div>
                     <div class="postback__button-wrapper">
                         <button class="postback__button">Create Pixel</button>
                     </div>
@@ -731,25 +734,44 @@
                 </div>
             </div>
         </div>
-        <div class="popup popup-exit" id="exit">
-            <h3>Do you really want to Quit?</h3>
-            <div class="popup-exit__button-wrapper">
-                <button class="popup-exit__btn-cancel">Cancel</button>
-                <button class="popup-exit__btn-quit">Quit</button>
+        <div class="popup" id="logout">
+            <div class="popup-exit">
+                <h3 class="popup-exit__heading">Do you really want to Quit?</h3>
+                <div class="popup-exit__button-wrapper">
+                    <button class="popup-exit__btn-cancel">Cancel</button>
+                    <button class="popup-exit__btn-quit">Quit</button>
+                </div>
             </div>
         </div>
-        <div class="popup popup-chat" id="chat">
-            <h2>Online chat with your personal manager</h2>
-            <span class="popup-chat__close">&times;</span>
-            <div class="popup-chat__manager">
-                <img class="popup-chat__manager-img" src="images/manager.png" alt="manager">
-                <span class="popup-chat__manager-name">Michael E.</span>
-                <span class="popup-chat__manager-status">Online</span>
-            </div>
-            <div class="popup-chat__output"></div>
-            <div class="popup-chat__input">
-                <input type="text" name="chat-input">
-                <button class="popup-chat__btn-send">Send</button>
+        <div class="popup" id="chat">
+            <div class="popup-chat">
+                <h2 class="popup-chat__title">Online chat with your personal manager</h2>
+                <span class="popup-chat__close">&times;</span>
+                <div class="popup-chat__manager">
+                    <div class="popup-chat__manager-img-wrapper">
+                        <img class="popup-chat__manager-img" src="images/manager.png" alt="manager">
+                    </div>
+                    <span class="popup-chat__manager-name">Michael E.</span>
+                    <span class="popup-chat__manager-status">Online</span>
+                </div>
+                <div class="popup-chat__output">
+                    <div class="popup-chat__msg popup-chat__msg--light">
+                        <div class="popup-chat__triangle-right"></div>
+                        <span class="popup-chat__msg-text">Hello. Can I help You?</span>
+                    </div>
+                    <div class="popup-chat__msg popup-chat__msg--dark">
+                            <div class="popup-chat__triangle-left"></div>
+                        <span class="popup-chat__msg-text">Hello! I would like to know about Posback</span>
+                    </div>
+                    <div class="popup-chat__msg popup-chat__msg--light">
+                            <div class="popup-chat__triangle-right"></div>
+                        <span class="popup-chat__msg-text">Ok. 5 min...</span>
+                    </div>
+                </div>
+                <div class="popup-chat__input-wrapper">
+                    <input class="popup-chat__input" type="text" name="chat-input">
+                    <button class="popup-chat__btn-send">Send</button>
+                </div>
             </div>
         </div>
         <script src="js/script.js"></script>

@@ -98,21 +98,47 @@ rgba(255,255,255,0)  100%)`;
 
 //  popups
 
-let login = document.querySelector('.top-menu__username');
+let login = document.querySelector('.top-menu__user');
+let logout = document.querySelector('#logout-button');
+let chat = document.querySelector('.side-menu__chat-link');
+
+let loginPopup = document.querySelector('#login');
+let logoutPopup = document.querySelector('#logout');
+let chatPopup = document.querySelector('#chat');
+
 login.addEventListener("click", function(){
   openPopup('login');
 });
+logout.addEventListener('click', function(){
+  openPopup('logout');
+});
+chat.addEventListener('click', function(){
+  openPopup('chat');
+});
 
 window.onclick = function(event) {
-  let popup = document.querySelector('#login');
-  if (event.target == popup) {
-    popup.style.display = 'none';
+  let popup = document.querySelectorAll('.popup');
+  var i;
+  for (i = 0; i < popup.length; i++) { 
+    if (event.target == popup[i]) {
+      popup[i].style.display = 'none';
+    }
   }
 }
 
+let close = document.querySelector('.popup-chat__close');
+close.onclick = function() {
+  chatPopup.style.display = 'none';
+}
+
 function openPopup(element) {
-  let loginPopup = document.querySelector('#login');
   if(element === 'login') {
     loginPopup.style.display = 'block';
+  }
+  else if(element === 'logout') {
+    logoutPopup.style.display = 'block';
+  }
+  else if(element === 'chat') {
+    chatPopup.style.display = 'block';
   }
 }
