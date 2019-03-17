@@ -8,24 +8,28 @@
     height: 100%;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
+    padding: 0 18px;
     &-login {
-        width: 750px;
+        width: 100%;
         background-color: $color-white;
         position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        
         &__input {
             @include border1pxgrey('all');
             border-radius: 3px;
             height: 40px;
             width: 210px;
             padding-left: 50px;
+            @include text(14px, lighter, 40px, $color-grey);
             &-wrapper {
                 width: 100%;
                 display: flex;
-                flex-flow: row nowrap;
+                flex-flow: column wrap;
                 justify-content: space-between;
+                align-items: center;
                 padding: 45px 45px 55px
             }
         }
@@ -81,7 +85,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 1074px;
+        width: 100%;
         background-color: $color-white;
         &__close {
             @include text (30px, normal, 42px, $color-grey);
@@ -162,20 +166,48 @@
         }
 
         &__input {
-            height: 40px;
+            position: relative;
+            width: 100%;
+            &-text {height: 40px;
             @include text(14px, lighter, 40px, $color-grey);
             width: 100%;
             @include border1pxgrey('all');
             border-radius: 3px;
+            padding-left: 40px;
+            }
             &-wrapper {
                 display: flex;
                 align-content: center;
                 padding: 18px;
             }
+            &-icon {
+                position: absolute;
+                left: 13px;
+                top: 12px;
+                width: 15px;
+                height: 16px;
+                fill: $color-grey;
+            }
         }
         &__btn-send {
             @include button(95px, 'orange');
             margin-left: 18px;
+        }
+    }
+}
+@media(min-width:992px) {
+    .popup {
+        padding: 0;
+        &-login {
+            width: 750px;
+            &__input {
+                &-wrapper {
+                    flex-flow: row nowrap;
+                }
+            }
+        }
+        &-chat {
+            width: 1074px;
         }
     }
 }

@@ -23,6 +23,7 @@
     }
     & input {
         width: 310px;
+        padding-left: 16px;
         @include border1pxgrey('all');
         border-radius: 3px;
         outline: none;
