@@ -202,7 +202,7 @@ template { display: none; }
 
 .sliderfill { border: none; margin: 0; height: 100%; color: #F58220; }
 
-.postback__range-input { cursor: pointer; width: 100%; opacity: 0.05; }
+.postback__range-input { cursor: pointer; width: 100%; opacity: 0.05; height: 40px; }
 
 .sliderthumb { width: 0; height: 50px; border-left: 11px solid transparent; border-right: 11px solid transparent; border-bottom: 22px solid #F58220; position: absolute; left: 0; top: -15px; pointer-events: none; }
 
@@ -300,6 +300,32 @@ template { display: none; }
 
 .popup-chat__btn-send:hover { background-color: #FFA200; }
 
+.pagination { text-align: center; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; }
+
+.pagination__link { font-family: 'Roboto', sans-serif; font-weight: lighter; text-decoration: none; color: #56819F; font-size: 16px; line-height: 17px; line-height: 40px; width: 40px; text-decoration: none; }
+
+.pagination__link:hover { color: #979797; background-color: #F5F5F2; }
+
+.pagination__icon { width: 16px; height: 10px; }
+
+.table-large { margin: 0 auto; width: 1020px; border-collapse: collapse; margin-bottom: 22px; }
+
+.table-large__heading { width: 100%; padding: 10px; border-radius: 3px; }
+
+.table-large__heading:hover { background-color: #F5F5F2; color: #333333; }
+
+.table-large__heading:hover .table-large__heading-icon { visibility: visible; }
+
+.table-large__heading-icon { visibility: hidden; width: 7px; height: 5px; fill: #bababa; margin-bottom: 2px; margin-left: 5px; margin-right: 10px; }
+
+.table-large th { font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: bold; line-height: 15px; color: #bababa; border-bottom: 1px solid #E3E3E3; height: 60px; text-align: left; }
+
+.table-large td { font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: lighter; line-height: 17px; color: #333333; border-bottom: 1px solid #E3E3E3; height: 60px; padding-left: 10px; }
+
+.table-large tr:not(:first-of-type):hover { background-color: #F5F5F2; }
+
+.table-large-wrapper { overflow-x: auto; }
+
 /* Sections */
 .side-menu { background-color: #333333; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 42px; color: #bababa; position: fixed; top: 0; height: 100%; width: 54px; overflow: hidden; white-space: nowrap; z-index: 30; }
 
@@ -347,6 +373,8 @@ template { display: none; }
 
 .top-menu__list-item { margin: 0; }
 
+.top-menu__user-tooltip { display: none; }
+
 .top-menu__username { font-family: 'Roboto', sans-serif; font-weight: lighter; text-decoration: none; color: #56819F; font-size: 13px; line-height: 42px; line-height: 42px; }
 
 .top-menu__icon { width: 20px; height: 17px; fill: #979797; margin: 0 18px; }
@@ -365,17 +393,19 @@ template { display: none; }
 
 .top-menu__exit { cursor: pointer; }
 
+.top-menu__exit-tooltip { display: none; }
+
 .top-menu--expand-notifications .top-menu__notifications-list { display: block; }
 
 .top-menu--expand-wallet .top-menu__wallet-list { display: block; }
 
-@media (min-width: 992px) { .top-menu { position: fixed; top: 0; margin-left: 15%; height: 60px; background-color: #FFFFFF; width: calc(100% - 15%); border-bottom: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
+@media (min-width: 992px) { .top-menu { position: fixed; top: 0; margin-left: 15%; height: 60px; background-color: #FFFFFF; width: calc(100% - 15%); border-bottom: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; overflow: hidden; }
   .top-menu__list { float: right; height: 100%; line-height: 60px; }
   .top-menu__list-item { display: inline-block; height: 100%; }
   .top-menu__user { border-left: 1px solid #E3E3E3; cursor: pointer; position: relative; }
   .top-menu__user:hover .top-menu__user-tooltip { visibility: visible; }
   .top-menu__username { position: relative; top: -4px; line-height: 60px; padding-right: 18px; }
-  .top-menu__user-tooltip { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 20px; color: #FFFFFF; visibility: hidden; width: 100px; background-color: black; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; top: 100%; left: 50%; margin-left: -50px; z-index: 99; }
+  .top-menu__user-tooltip { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 20px; color: #FFFFFF; display: block; visibility: hidden; width: 100px; background-color: black; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; top: 100%; left: 50%; margin-left: -50px; z-index: 99; }
   .top-menu__notifications { position: relative; min-height: 60px; }
   .top-menu__notifications-list { position: absolute; }
   .top-menu__notifications-bell:hover .top-menu__notifications-list { display: block; width: 238px; }
@@ -391,7 +421,7 @@ template { display: none; }
   .top-menu__arrow-down { display: inline-block; }
   .top-menu__exit { border-left: 1px solid #E3E3E3; position: relative; }
   .top-menu__exit:hover .top-menu__exit-tooltip { visibility: visible; }
-  .top-menu__exit-tooltip { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 20px; color: #FFFFFF; visibility: hidden; width: 100px; background-color: black; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; top: 100%; left: 50%; margin-left: -50px; z-index: 99; }
+  .top-menu__exit-tooltip { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 20px; color: #FFFFFF; display: block; visibility: hidden; width: 100px; background-color: black; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; top: 100%; left: 50%; margin-left: -50px; z-index: 99; }
   .top-menu--expand { width: calc(100% - 54px); margin-left: 54px; } }
 
 /* Pages / Views */
@@ -518,6 +548,10 @@ template { display: none; }
 .postback__button-wrapper { border-top: 1px solid #E3E3E3; text-align: right; margin-right: 23px; padding-top: 18px; }
 
 .postback--red-text { color: #FF0000; text-transform: uppercase; }
+
+.details { background-color: #FFFFFF; padding-bottom: 24px; margin-bottom: 22px; }
+
+.payout { background-color: #FFFFFF; padding-bottom: 24px; margin-bottom: 22px; }
 
 /* Grid */
 .col-lg-1 { width: 8.33333%; }

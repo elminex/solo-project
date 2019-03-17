@@ -13,6 +13,9 @@
             margin: 0;
         };
     };
+    &__user-tooltip {
+        display: none;
+    }
     &__username {
         @include links('small');
         line-height: 42px;
@@ -55,6 +58,9 @@
     };
     &__exit {
         cursor: pointer;
+        &-tooltip {
+            display: none;
+        }
     }
 };
 .top-menu--expand {
@@ -79,6 +85,7 @@
         width: calc(100% - #{$side-menu-expand-width});
         border-bottom: 1px solid $color-light-grey;
         border-right: 1px solid $color-light-grey;
+        overflow: hidden;
         &__list {
             float: right;
             height: 100%;
@@ -104,6 +111,7 @@
             };
             &-tooltip {
                 @include text(14px,lighter, 20px, $color-white);
+                    display: block;
                     visibility: hidden;
                     width: 100px;
                     background-color: black;
@@ -172,6 +180,7 @@
             }
             &-tooltip {
                 @include text(14px,lighter, 20px, $color-white);
+                    display: block;
                     visibility: hidden;
                     width: 100px;
                     background-color: black;

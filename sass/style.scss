@@ -6,6 +6,8 @@
 @import "components/form_field";
 @import "components/date_picker";
 @import "components/popups";
+@import "components/pagination";
+@import "components/table-large";
 
 /* Sections */
 @import "section/side-menu";
@@ -18,6 +20,8 @@
 @import "pages/links";
 @import "pages/banners";
 @import "pages/postback";
+@import "pages/details";
+@import "pages/payout";
 /* Grid */
 
 $grid-columns: 12;

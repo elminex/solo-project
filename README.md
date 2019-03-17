@@ -6,8 +6,7 @@ To-do-list:
 fix styling(paddings, svg sizes, borders),
 remove loop from range input js,
 fix menu styling on mobile,
-make payouts and details sections,
-wrap inputs in popups with <form>
-
+remake scss to mobule first on new sections
+make popups for mobile,
 make custom slider for postback(?)
 style svg separately(??)
