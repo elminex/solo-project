@@ -15,7 +15,7 @@
     };
     &__user-tooltip {
         display: none;
-    }
+    };
     &__username {
         @include links('small');
         line-height: 42px;
@@ -60,8 +60,8 @@
         cursor: pointer;
         &-tooltip {
             display: none;
-        }
-    }
+        };
+    };
 };
 .top-menu--expand {
     &-notifications .top-menu__notifications-list {
@@ -74,7 +74,7 @@
 
 @media (min-width: 768px) {
 
-}
+};
 @media (min-width: 992px) {
     .top-menu {
         position: fixed;
@@ -85,7 +85,6 @@
         width: calc(100% - #{$side-menu-expand-width});
         border-bottom: 1px solid $color-light-grey;
         border-right: 1px solid $color-light-grey;
-        overflow: hidden;
         &__list {
             float: right;
             height: 100%;
@@ -101,7 +100,7 @@
             position: relative;
             &:hover .top-menu__user-tooltip {
                 visibility: visible;
-            }
+            };
             &name {
                 position: relative;
                 top: -4px;
@@ -123,7 +122,7 @@
                     left: 50%; 
                     margin-left: -50px;
                     z-index: 99;
-            }
+            };
         };
         &__notifications {
             position: relative;
@@ -177,7 +176,7 @@
             position: relative;
             &:hover .top-menu__exit-tooltip {
                 visibility: visible;
-            }
+            };
             &-tooltip {
                 @include text(14px,lighter, 20px, $color-white);
                     display: block;
@@ -192,7 +191,7 @@
                     left: 50%; 
                     margin-left: -50px;
                     z-index: 99;
-            }
+            };
         };
         &--expand {
         width: calc(100% - #{$side-menu-mobile-width});
