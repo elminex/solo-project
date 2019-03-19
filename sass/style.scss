@@ -40,14 +40,14 @@ $grid-columns: 12;
     .col-offset-#{$i} {
         margin-left: percentage($i / $grid-columns);
     }
-};
+}
 
 * {
     box-sizing: border-box;
-};
+}
 [class*="col-"] {
     float:left;
-};
+}
 
 h1 {
     margin: 0;
@@ -58,12 +58,12 @@ h2 {
     margin: 0;
     padding: 2px 18px;
     @include border1pxgrey('bottom');
-};
+}
 h3 {
     @include text-section-header;
     margin: 0;
     padding-left: 18px;
-};
+}
 @media(min-width: 768px) {
     h3 {
         padding: 0;
@@ -71,22 +71,22 @@ h3 {
 }
 p {
     @include text-other;
-};
+}
 
 body {
     background-color: $color-background-dark;
-};
+}
 .content {
     margin-left: $side-menu-mobile-width;
     margin-top: 0;
     padding: 16px 18px 0;
-};
+}
 @media (min-width: 992px) {
     .content {
         margin-left: $side-menu-expand-width;
         margin-top: 60px;
         &--margin {
             margin-left: $side-menu-mobile-width;
-        };
-    };
-};
+        }
+    }
+}

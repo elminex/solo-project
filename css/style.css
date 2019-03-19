@@ -401,7 +401,7 @@ template { display: none; }
 
 .top-menu__notifications-dot { display: inline-block; height: 8px; width: 8px; border-radius: 5px; background-color: #F58220; float: right; margin-top: 9px; }
 
-.top-menu__notifications-list { display: none; width: 100%; list-style-type: none; background-color: #F5F5F2; padding: 10px 18px 22px; font-family: 'Roboto', sans-serif; font-size: 12px; font-weight: regular; line-height: 26px; color: #56819F; }
+.top-menu__notifications-list { display: none; width: 100%; list-style-type: none; background-color: #F5F5F2; padding: 10px 18px 22px; font-family: 'Roboto', sans-serif; font-size: 12px; font-weight: normal; line-height: 26px; color: #56819F; }
 
 .top-menu__notifications-close { display: none; }
 
@@ -411,7 +411,7 @@ template { display: none; }
 
 .top-menu__wallet { font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: normal; line-height: 42px; color: #979797; }
 
-.top-menu__wallet-list { display: none; width: 100%; list-style-type: none; font-family: 'Roboto', sans-serif; font-size: 12px; font-weight: regular; line-height: 26px; color: #979797; background-color: #F5F5F2; padding: 10px 18px 22px; }
+.top-menu__wallet-list { display: none; width: 100%; list-style-type: none; font-family: 'Roboto', sans-serif; font-size: 12px; font-weight: normal; line-height: 26px; color: #979797; background-color: #F5F5F2; padding: 10px 18px 22px; }
 
 .top-menu__wallet-list-amount { color: #333333; float: right; }
 
@@ -429,13 +429,14 @@ template { display: none; }
 
 .top-menu--expand .top-menu__notifications-bell-dot { left: 28px; }
 
-@media (min-width: 992px) { .top-menu { position: fixed; top: 0; margin-left: 15%; height: 60px; background-color: #FFFFFF; width: calc(100% - 15%); border-bottom: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; }
+@media (min-width: 992px) { .top-menu { position: fixed; top: 0; margin-left: 15%; height: 60px; background-color: #FFFFFF; width: calc(100% - 15%); border-bottom: 1px solid #E3E3E3; }
   .top-menu__list { float: right; height: 100%; line-height: 60px; }
-  .top-menu__list-item { display: inline-block; height: 100%; }
-  .top-menu__uer { border-left: 1px solid #E3E3E3; cursor: pointer; position: relative; }
-  .top-menu__uer:hover .top-menu__user-tooltip { visibility: visible; }
-  .top-menu__uername { position: relative; top: -4px; line-height: 60px; padding-right: 18px; }
-  .top-menu__uer-tooltip { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 20px; color: #FFFFFF; display: block; visibility: hidden; width: 100px; background-color: black; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; top: 100%; left: 50%; margin-left: -50px; z-index: 99; }
+  .top-menu__list-item { display: inline-block; height: 100%; border-right: 1px solid #E3E3E3; }
+  .top-menu__list-item:nth-of-type(1) { border-left: 1px solid #E3E3E3; }
+  .top-menu__user { cursor: pointer; position: relative; }
+  .top-menu__user:hover .top-menu__user-tooltip { visibility: visible; }
+  .top-menu__username { position: relative; top: -4px; line-height: 60px; padding-right: 18px; }
+  .top-menu__user-tooltip { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 20px; color: #FFFFFF; display: block; visibility: hidden; width: 100px; background-color: black; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; top: 100%; left: 50%; margin-left: -50px; z-index: 99; }
   .top-menu__notifications { position: relative; min-height: 60px; }
   .top-menu__notifications-list { position: absolute; }
   .top-menu__notifications-bell:hover .top-menu__notifications-bell-dot { visibility: hidden; }
@@ -444,14 +445,14 @@ template { display: none; }
   .top-menu__notifications-bell:hover .top-menu__notifications-close { display: inline-block; }
   .top-menu__notifications-bell-dot { display: inline-block; height: 8px; width: 8px; border-radius: 5px; background-color: #F58220; position: absolute; top: 16px; right: 20px; }
   .top-menu__notifications-close { margin-left: 145px; }
-  .top-menu__wallet { line-height: 60px; border-left: 1px solid #E3E3E3; border-right: 1px solid #E3E3E3; position: relative; }
+  .top-menu__wallet { line-height: 60px; position: relative; }
   .top-menu__wallet:hover { color: #333333; background-color: #F5F5F2; }
   .top-menu__wallet:hover .top-menu__wallet-list { display: block; }
   .top-menu__wallet:hover .top-menu__arrow-up { display: inline-block; }
   .top-menu__wallet:hover .top-menu__arrow-down { display: none; }
   .top-menu__wallet-list { position: absolute; }
   .top-menu__arrow-down { display: inline-block; }
-  .top-menu__exit { border-left: 1px solid #E3E3E3; position: relative; }
+  .top-menu__exit { position: relative; }
   .top-menu__exit:hover .top-menu__exit-tooltip { visibility: visible; }
   .top-menu__exit-tooltip { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: lighter; line-height: 20px; color: #FFFFFF; display: block; visibility: hidden; width: 100px; background-color: black; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; top: 100%; left: 50%; margin-left: -50px; z-index: 99; }
   .top-menu--expand { width: calc(100% - 54px); margin-left: 54px; } }

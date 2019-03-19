@@ -38,7 +38,7 @@
             list-style-type: none;
             background-color: $color-background;
             padding: 10px 18px 22px;
-            @include text(12px, regular, 26px, $color-blue);
+            @include text(12px, normal, 26px, $color-blue);
         }
         &-close {
             display:none;
@@ -59,7 +59,7 @@
             display: none;
             width: 100%;
             list-style-type: none;
-            @include text (12px, regular, 26px, $color-dark-grey);
+            @include text (12px, normal, 26px, $color-dark-grey);
             background-color: $color-background;
             padding: 10px 18px 22px;
             &-amount {
@@ -105,7 +105,6 @@
         background-color: $color-white;
         width: calc(100% - #{$side-menu-expand-width});
         border-bottom: 1px solid $color-light-grey;
-        border-right: 1px solid $color-light-grey;
         &__list {
             float: right;
             height: 100%;
@@ -113,10 +112,13 @@
             &-item {
                 display: inline-block;
                 height: 100%;
+                @include border1pxgrey('right');
+                &:nth-of-type(1) {
+                    @include border1pxgrey('left');
+                }
             }
-        };
-        &__uer {
-            border-left: 1px solid $color-light-grey;
+        }
+        &__user {
             cursor: pointer;
             position: relative;
             &:hover .top-menu__user-tooltip {
@@ -171,42 +173,39 @@
                     top: 16px;
                     right: 20px;
             }
-            };
+            }
             &-close {
                 margin-left: 145px;
-            };
-        };
+            }
+        }
         &__wallet {
             line-height: 60px;
-            border-left: 1px solid $color-light-grey;
-            border-right: 1px solid $color-light-grey;
             position: relative;
             &:hover {
                 color: $color-black;
                 background-color: $color-background;
-            };
+            }
             &:hover &-list {
                 display: block;
-            };
+            }
             &:hover .top-menu__arrow-up {
                 display: inline-block;
-            };
+            }
             &:hover .top-menu__arrow-down {
                 display: none;
             };
             &-list {
                 position: absolute;
-            };
-        };
+            }
+        }
         &__arrow-down {
             display: inline-block;
-        };
+        }
         &__exit {
-            border-left: 1px solid $color-light-grey;
             position: relative;
             &:hover .top-menu__exit-tooltip {
                 visibility: visible;
-            };
+            }
             &-tooltip {
                 @include text(14px,lighter, 20px, $color-white);
                     display: block;
@@ -221,14 +220,14 @@
                     left: 50%; 
                     margin-left: -50px;
                     z-index: 99;
-            };
-        };
+            }
+        }
         &--expand {
         width: calc(100% - #{$side-menu-mobile-width});
         margin-left: $side-menu-mobile-width;
-        };
-    };
-};
+        }
+    }
+}
 @media (min-width: 1200px) {
 
 }
