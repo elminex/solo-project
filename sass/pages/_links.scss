@@ -5,14 +5,15 @@
         margin: 0 auto;
         max-width: 684px;
         text-align: center;
+        padding: 0 18px;
         width: 100%;
         overflow-x: auto;
     }
     &__table {
         text-align: left;
         width: 100%;
+        white-space: nowrap;
         border-collapse: collapse;
-        min-width: 500px;
         &-name {
             @include text-section-header;
         }
@@ -39,10 +40,14 @@
     &__icon {
         display: block;
         width: 16px;
-        visibility: hidden;
     }
     &__button {
         @include button(126px, 'orange');
         margin: 23px 0;
+    }
+}
+@media(min-width: 992px) {
+    .links__icon {
+        visibility: hidden;
     }
 }

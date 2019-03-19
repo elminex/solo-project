@@ -11,7 +11,7 @@
         border-collapse: collapse;
         width: 100%;
         max-width: 100%;
-        min-width: 500px;
+        white-space: nowrap;
         @include text(16px, lighter, 35px, $color-black);
         &-name {
             @include text-section-header;

@@ -99,3 +99,15 @@
       clear: both;
     }
 }
+@mixin dot($color) {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 5px;
+    @if ($color == 'orange') {
+        background-color: $color-orange;
+    }
+    @else if ($color == 'green') {
+        background-color: $color-green;
+    }
+}

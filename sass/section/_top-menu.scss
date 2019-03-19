@@ -11,22 +11,27 @@
         list-style-type: none;
         &-item {
             margin: 0;
-        };
-    };
+        }
+    }
     &__user-tooltip {
         display: none;
-    };
+    }
     &__username {
         @include links('small');
         line-height: 42px;
-    };
+    }
     &__icon {
         width: 20px;
         height: 17px;
         fill: $color-dark-grey;
         margin: 0 18px;
-    };
+    }
     &__notifications {
+        &-dot {
+            @include dot('orange');
+            float: right;
+            margin-top: 9px;
+        }
         &-list {
             display: none;
             width: 100%;
@@ -34,11 +39,20 @@
             background-color: $color-background;
             padding: 10px 18px 22px;
             @include text(12px, regular, 26px, $color-blue);
-        };
+        }
         &-close {
             display:none;
-        };
-    };
+        }
+        &-bell {
+            position: relative;
+            &-dot {
+                @include dot('orange');
+                position: absolute;
+                top: 6px;
+                right: 18px;
+            }
+        }
+    }
     &__wallet {
         @include text(20px, normal, 42px, $color-dark-grey);
         &-list {
@@ -48,33 +62,40 @@
             @include text (12px, regular, 26px, $color-dark-grey);
             background-color: $color-background;
             padding: 10px 18px 22px;
-        };
-    };
+            &-amount {
+                color: $color-black;
+                float: right;
+            }
+        }
+    }
     &__arrow-up {
         display: none;
-    };
+    }
     &__arrow-down {
         display: none;
-    };
+    }
     &__exit {
         cursor: pointer;
         &-tooltip {
             display: none;
-        };
-    };
-};
+        }
+    }
+}
 .top-menu--expand {
     &-notifications .top-menu__notifications-list {
         display: block;
     };
     &-wallet .top-menu__wallet-list {
         display: block;
-    };
-};
+    }
+    .top-menu__notifications-bell-dot {
+        left: 28px;
+    }
+}
 
 @media (min-width: 768px) {
 
-};
+}
 @media (min-width: 992px) {
     .top-menu {
         position: fixed;
@@ -92,55 +113,64 @@
             &-item {
                 display: inline-block;
                 height: 100%;
-            };
+            }
         };
-        &__user {
+        &__uer {
             border-left: 1px solid $color-light-grey;
             cursor: pointer;
             position: relative;
             &:hover .top-menu__user-tooltip {
                 visibility: visible;
-            };
+            }
             &name {
                 position: relative;
                 top: -4px;
                 line-height: 60px;
                 padding-right: 18px;
                 
-            };
+            }
             &-tooltip {
                 @include text(14px,lighter, 20px, $color-white);
-                    display: block;
-                    visibility: hidden;
-                    width: 100px;
-                    background-color: black;
-                    text-align: center;
-                    padding: 5px 0;
-                    border-radius: 6px;
-                    position: absolute;
-                    top: 100%;
-                    left: 50%; 
-                    margin-left: -50px;
-                    z-index: 99;
-            };
-        };
+                display: block;
+                visibility: hidden;
+                width: 100px;
+                background-color: black;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;
+                position: absolute;
+                top: 100%;
+                left: 50%; 
+                margin-left: -50px;
+                z-index: 99;
+            }
+        }
         &__notifications {
             position: relative;
             min-height: 60px;
             &-list {
                 position: absolute;
-            };
+            }
             &-bell {
+                &:hover &-dot {
+                    visibility: hidden;
+                }
                 &:hover .top-menu__notifications-list {
                     display: block;
                     width: 238px;
-                };
+                }
                 &:hover .top-menu__user {
                     visibility: hidden;
-                };
+                }
                 &:hover .top-menu__notifications-close {
                     display: inline-block;
-                };
+                }
+                &-dot {
+                    @include dot('orange');
+                    position: absolute;
+                    top: 16px;
+                    right: 20px;
+            }
             };
             &-close {
                 margin-left: 145px;

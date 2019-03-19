@@ -62,7 +62,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 360px;
+        width: 100%;
         background-color: $color-white;
         &__heading {
             padding: 13px 23px;
@@ -199,7 +199,7 @@
     .popup {
         padding: 0;
         &-login {
-            width: 750px;
+            max-width: 750px;
             &__input {
                 &-wrapper {
                     flex-flow: row nowrap;
@@ -207,7 +207,10 @@
             }
         }
         &-chat {
-            width: 1074px;
+            max-width: 1074px;
+        }
+        &-exit {
+            max-width: 360px;
         }
     }
 }

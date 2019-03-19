@@ -21,30 +21,30 @@
                 color: $color-white;
                 border-left: 4px solid $color-orange;
                 background-color: $color-dark-grey;
-            };
+            }
             &-link {
                 color: inherit;
                 text-decoration: none;
                 display: block;
             }
-        };
-    };
+        }
+    }
     &__icon {
         fill: $color-grey;
         width: 20px;
         max-height: 14px;
         margin-right: 16px;
 
-    };
+    }
     &__img-wrapper {
         padding: 20px 10px;
         display: flex;
         justify-content: space-between;
-    };
+    }
     &__logo {
         padding: 0 8px;
         display: none;
-    };
+    }
     &__button {
         background-color: transparent;
         border: none;
@@ -59,54 +59,65 @@
         display: block;
         max-width: 100%;
         height: 15px;
-    };
+    }
     &__chat {
         width: 100%;
         padding: 25px 18px 25px 12px;
         border-top: 2px solid $color-dark-grey;
         letter-spacing: -0.28px;
+        &-dot {
+            @include dot('green');
+            position: absolute;
+            top: 0;
+            left: 22px;
+        }
         &-link {
             @include links('chat');
             cursor: pointer;
-        };
+            position: relative;
+        }
         &-portrait {
             width: 30px;
             display: block;
             float:left;
             margin-right: 10px;
-        };
+            
+        }
         &-title {
             @include text(14px, 500, 42px, $color-grey);
             text-transform: uppercase;
             display: none;
-        };
-    };
+        }
+    }
     &--expand {
         width: $side-menu-mobile-expand-width;
-        & .side-menu__logo {
+        .side-menu__logo {
             display: block;
-        };
-        & .side-menu__chat {
+        }
+        .side-menu__chat {
             padding-left: 18px;
-        };
-        & .side-menu__chat-portrait {
+        }
+        .side-menu__chat-portrait {
             width: auto;
-        };
-        & .side-menu__chat-title {
+        }
+        .side-menu__chat-title {
             display: block;
-        };
-    };
-};
+        }
+        .side-menu__chat-dot {
+            left: 34px;
+        }
+    }
+}
 @media (min-width: 768px) {
 
-};
+}
 @media (min-width: 992px) {
     .side-menu {
         &--expand {
             width: $side-menu-expand-width;
         }
     }
-};
+}
 @media (min-width: 1200px) {
 
-};
+}
