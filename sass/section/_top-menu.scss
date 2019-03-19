@@ -1,13 +1,10 @@
 .top-menu {
     position: static;
-    height: 100%;
     margin-left: 0;
     background-color: $color-black;
     &__list {
         margin: 0;
         padding: 0;
-        height: 42px;
-        line-height: 42px;
         list-style-type: none;
         &-item {
             margin: 0;
@@ -27,6 +24,9 @@
         margin: 0 18px;
     }
     &__notifications {
+        &-link {
+            @include links(12px);
+        }
         &-dot {
             @include dot('orange');
             float: right;
@@ -45,6 +45,8 @@
         }
         &-bell {
             position: relative;
+            display: inline-block;
+            width: 100%;
             &-dot {
                 @include dot('orange');
                 position: absolute;
@@ -62,9 +64,12 @@
             @include text (12px, normal, 26px, $color-dark-grey);
             background-color: $color-background;
             padding: 10px 18px 22px;
+            &-item {
+                display: flex;
+            }
             &-amount {
                 color: $color-black;
-                float: right;
+                margin-left: auto;
             }
         }
     }
@@ -101,17 +106,17 @@
         position: fixed;
         top: 0;
         margin-left: $side-menu-expand-width;
-        height: 60px;
         background-color: $color-white;
         width: calc(100% - #{$side-menu-expand-width});
         border-bottom: 1px solid $color-light-grey;
         &__list {
-            float: right;
-            height: 100%;
-            line-height: 60px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             &-item {
                 display: inline-block;
                 height: 100%;
+                line-height: 60px;
                 @include border1pxgrey('right');
                 &:nth-of-type(1) {
                     @include border1pxgrey('left');
@@ -170,16 +175,14 @@
                 &-dot {
                     @include dot('orange');
                     position: absolute;
-                    top: 16px;
-                    right: 20px;
-            }
+                    top: 15px;
+                }
             }
             &-close {
                 margin-left: 145px;
             }
         }
         &__wallet {
-            line-height: 60px;
             position: relative;
             &:hover {
                 color: $color-black;

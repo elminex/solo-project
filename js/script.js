@@ -21,8 +21,8 @@ if (window.matchMedia("(min-width: 992px)").matches) {
 };
 
 function toggleMenu(target, visible) {
-    var topMenu = document.querySelector('.top-menu');
-    var content = document.querySelector('.content');
+    let topMenu = document.querySelector('.top-menu');
+    let content = document.querySelector('.content');
     if (target === 'hamburger') {
         topMenu.classList.toggle('top-menu--expand', visible)
         sideMenu.classList.toggle('side-menu--expand', visible)
@@ -34,8 +34,8 @@ function toggleMenu(target, visible) {
         }
     }
     else if (target === 'notifications') {
-        if (topMenu.classList.contains ('top-menu--expand')) {
-            topMenu.classList.toggle('top-menu--expand-notifications', visible)
+      if (topMenu.classList.contains('top-menu--expand')) {
+        topMenu.classList.toggle('top-menu--expand-notifications', visible);
         }
     }
 }

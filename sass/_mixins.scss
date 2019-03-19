@@ -45,6 +45,9 @@
         font-size: 14px;
         line-height: 42px;
     }
+    @else {
+        font-size: $size;
+    }
 }
 @mixin margin-auto {
     margin-left: auto;
