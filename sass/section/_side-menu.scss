@@ -6,6 +6,7 @@
     height: 100%;
     width: $side-menu-mobile-width;
     overflow-y: auto;
+    overflow-x: hidden;
     white-space: nowrap;
     z-index: 30;
     &__list {
@@ -37,6 +38,7 @@
     }
     &__img-wrapper {
         padding: 20px 10px;
+        height: 63px;
         display: flex;
         justify-content: space-between;
     }

@@ -18,22 +18,22 @@ if (window.matchMedia("(min-width: 992px)").matches) {
     sideMenu.classList.add('side-menu--expand')
 };
 
-function toggleMenu(target) {
+function toggleMenu(target, visible) {
     let topMenu = document.querySelector('.top-menu');
     let content = document.querySelector('.content');
     if (target === 'hamburger') {
-        topMenu.classList.toggle('top-menu--expand')
-        sideMenu.classList.toggle('side-menu--expand')
-        content.classList.toggle('content--margin')
+        topMenu.classList.toggle('top-menu--expand', visible)
+        sideMenu.classList.toggle('side-menu--expand', visible)
+        content.classList.toggle('content--margin', visible)
     }
     else if (target === 'wallet') {
         if (topMenu.classList.contains ('top-menu--expand')) {
-            topMenu.classList.toggle('top-menu--expand-wallet')
+            topMenu.classList.toggle('top-menu--expand-wallet', visible)
         }
     }
     else if (target === 'notifications') {
       if (topMenu.classList.contains('top-menu--expand')) {
-        topMenu.classList.toggle('top-menu--expand-notifications');
+        topMenu.classList.toggle('top-menu--expand-notifications', visible);
         }
     }
 }
@@ -83,40 +83,49 @@ rgba(255,255,255,0)  100%)`;
   elem.style.backgroundImage = gradient;
 };
 
-// popups
+//  popups
 
-document.addEventListener('click', function (event) {
-  let trigger = event.target.getAttribute('id');
-  let loginPopup = document.querySelector('#login');
-  let logoutPopup = document.querySelector('#logout');
-  let chatPopup = document.querySelector('#chat');
-  console.log(trigger);
-  switch(trigger) {
-    case 'login-trigger':
-    case 'login-trigger-wrap':
-      loginPopup.style.display = 'block';
-      closePopup(loginPopup);
-      break;
-    case 'logout-trigger':
-    case 'logout-trigger-wrap':
-      logoutPopup.style.display = 'block';
-      closePopup(logoutPopup);
-      break;
-    case 'chat-trigger':
-    case 'chat-trigger-portrait':
-      chatPopup.style.display = 'block';
-      let close = document.querySelector('.popup-chat__close');
-      close.onclick = function () {
-        chatPopup.style.display = 'none';
-      }
-      closePopup(chatPopup);
-      break;
-  }
+var login = document.querySelector('.top-menu__user');
+var logout = document.querySelector('#logout-button');
+var chat = document.querySelector('.side-menu__chat-link');
+
+var loginPopup = document.querySelector('#login');
+var logoutPopup = document.querySelector('#logout');
+var chatPopup = document.querySelector('#chat');
+
+login.addEventListener("click", function(){
+  openPopup('login');
+});
+logout.addEventListener('click', function(){
+  openPopup('logout');
+});
+chat.addEventListener('click', function(){
+  openPopup('chat');
 });
 
-function closePopup(popup) {
-  window.onclick = function (event) {
-    if (event.target == popup)
-    popup.style.display = 'none';
+window.onclick = function(event) {
+  var popup = document.querySelectorAll('.popup');
+  var i;
+  for (i = 0; i < popup.length; i++) { 
+    if (event.target == popup[i]) {
+      popup[i].style.display = 'none';
+    }
+  }
+}
+
+var close = document.querySelector('.popup-chat__close');
+close.onclick = function() {
+  chatPopup.style.display = 'none';
+}
+
+function openPopup(element) {
+  if(element === 'login') {
+    loginPopup.style.display = 'block';
+  }
+  else if(element === 'logout') {
+    logoutPopup.style.display = 'block';
+  }
+  else if(element === 'chat') {
+    chatPopup.style.display = 'block';
   }
 }

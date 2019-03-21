@@ -8,6 +8,9 @@
         list-style-type: none;
         &-item {
             margin: 0;
+            &--trigger {
+                cursor: pointer;
+            }
         }
     }
     &__user-tooltip {
@@ -134,7 +137,6 @@
                 top: -4px;
                 line-height: 60px;
                 padding-right: 18px;
-                
             }
             &-tooltip {
                 @include text(14px,lighter, 20px, $color-white);
