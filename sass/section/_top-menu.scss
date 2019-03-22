@@ -1,14 +1,13 @@
 .top-menu {
-    position: static;
-    margin-left: 0;
     background-color: $color-black;
+    transition: width, .3s;
     &__list {
         margin: 0;
         padding: 0;
         list-style-type: none;
         &-item {
             margin: 0;
-            &--trigger {
+            &.popup-trigger {
                 cursor: pointer;
             }
         }
@@ -54,7 +53,7 @@
                 @include dot('orange');
                 position: absolute;
                 top: 6px;
-                right: 18px;
+                left: 30px;
             }
         }
     }
@@ -96,9 +95,6 @@
     &-wallet .top-menu__wallet-list {
         display: block;
     }
-    .top-menu__notifications-bell-dot {
-        left: 28px;
-    }
 }
 
 @media (min-width: 768px) {
@@ -128,9 +124,11 @@
         }
         &__user {
             cursor: pointer;
-            position: relative;
-            &:hover .top-menu__user-tooltip {
-                visibility: visible;
+            &-wrap {
+                position: relative;
+                &:hover .top-menu__user-tooltip {
+                    visibility: visible;
+                }
             }
             &name {
                 position: relative;
@@ -175,7 +173,6 @@
                     display: inline-block;
                 }
                 &-dot {
-                    @include dot('orange');
                     position: absolute;
                     top: 15px;
                 }

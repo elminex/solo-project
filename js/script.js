@@ -1,42 +1,88 @@
-//      MENU
-
-document.querySelector('.side-menu__button').addEventListener('click', function(e) {
-    e.preventDefault();
-    toggleMenu('hamburger')
+// MENU
+document.addEventListener('DOMContentLoaded', function () {
+  setMenu();
 });
-document.querySelector('.top-menu__wallet').addEventListener('click', function(e) {
-    e.preventDefault();
-    toggleMenu('wallet')
+window.addEventListener('resize', function () {
+  setMenu();
+  document.querySelector('.top-menu__wallet').removeEventListener('click', walletToggle);
+  document.querySelector('.top-menu__notifications-bell').removeEventListener('click', notificationToggle);
 });
-document.querySelector('.top-menu__notifications-bell').addEventListener('click', function(e) {
-    e.preventDefault();
-    toggleMenu('notifications')
-});
-
-var sideMenu = document.querySelector('.side-menu');
-if (window.matchMedia("(min-width: 992px)").matches) {
-    sideMenu.classList.add('side-menu--expand')
+function setMenu() {
+  if (window.matchMedia("(min-width: 992px)").matches) {
+    showMenu();
+  }
+  else {
+    hideMenu();
+  };
 };
 
-function toggleMenu(target) {
-    let topMenu = document.querySelector('.top-menu');
-    let content = document.querySelector('.content');
-    if (target === 'hamburger') {
-        topMenu.classList.toggle('top-menu--expand')
-        sideMenu.classList.toggle('side-menu--expand')
-        content.classList.toggle('content--margin')
-    }
-    else if (target === 'wallet') {
-        if (topMenu.classList.contains ('top-menu--expand')) {
-            topMenu.classList.toggle('top-menu--expand-wallet')
-        }
-    }
-    else if (target === 'notifications') {
-      if (topMenu.classList.contains('top-menu--expand')) {
-        topMenu.classList.toggle('top-menu--expand-notifications');
-        }
-    }
-}
+function showMenu() {
+  topMenu.classList.remove('top-menu--expand');
+  sideMenu.classList.add('side-menu--expand');
+  content.classList.remove('content--margin');
+};
+
+function hideMenu() {
+  topMenu.classList.add('top-menu--expand');
+  sideMenu.classList.remove('side-menu--expand');
+  content.classList.add('content--margin');
+};
+
+let topMenu = document.querySelector('.top-menu');
+let content = document.querySelector('.content');
+let sideMenu = document.querySelector('.side-menu');
+
+document.querySelector('.side-menu__button').addEventListener('click', function (e) {
+  e.preventDefault();
+  let state 
+  if (sideMenu.classList.contains('side-menu--expand') === true) {
+    state = 'expanded';
+  }
+  else {
+    state = 'small'
+  }
+  toggleMenu(state);
+  walletListener(state);
+  notificationsListener(state);
+});
+
+function toggleMenu(state) {
+  switch (state) {
+    case 'expanded':
+      hideMenu();
+      break;
+    case 'small':
+      showMenu();
+  };
+};
+function walletListener(state) {
+  switch (state) {
+    case 'small':
+      document.querySelector('.top-menu__wallet').addEventListener('click', walletToggle);
+      break;
+    case 'expanded':
+      topMenu.classList.remove('top-menu--expand-wallet');
+      document.querySelector('.top-menu__wallet').removeEventListener('click', walletToggle);
+  };
+};
+function notificationsListener(state) {
+  switch (state) {
+    case 'small':
+      document.querySelector('.top-menu__notifications-bell').addEventListener('click', notificationToggle);
+      break;
+    case 'expanded':
+      topMenu.classList.remove('top-menu--expand-notifications');
+      document.querySelector('.top-menu__notifications-bell').removeEventListener('click', notificationToggle);
+  };
+};
+
+function notificationToggle() {
+  topMenu.classList.toggle('top-menu--expand-notifications');
+};
+function walletToggle() {
+  topMenu.classList.toggle('top-menu--expand-wallet');
+};
+
 
 //    Range slider
 
@@ -85,38 +131,40 @@ rgba(255,255,255,0)  100%)`;
 
 // popups
 
-document.addEventListener('click', function (event) {
-  let trigger = event.target.getAttribute('id');
+let popupTriggers = document.querySelectorAll('.popup-trigger');
+for (let i = 0; i < popupTriggers.length; i++) {
+  let trigger = popupTriggers[i];
+  trigger.addEventListener('click', function () {
+    openPopup(i);
+  });
+};
+
+function openPopup(i) {
   let loginPopup = document.querySelector('#login');
   let logoutPopup = document.querySelector('#logout');
   let chatPopup = document.querySelector('#chat');
-  console.log(trigger);
-  switch(trigger) {
+  let trigger = popupTriggers[i].getAttribute('id');
+  switch (trigger) {
     case 'login-trigger':
-    case 'login-trigger-wrap':
       loginPopup.style.display = 'block';
       closePopup(loginPopup);
       break;
     case 'logout-trigger':
-    case 'logout-trigger-wrap':
       logoutPopup.style.display = 'block';
       closePopup(logoutPopup);
       break;
     case 'chat-trigger':
-    case 'chat-trigger-portrait':
       chatPopup.style.display = 'block';
-      let close = document.querySelector('.popup-chat__close');
-      close.onclick = function () {
-        chatPopup.style.display = 'none';
-      }
       closePopup(chatPopup);
-      break;
-  }
-});
-
+  };
+};
 function closePopup(popup) {
   window.onclick = function (event) {
     if (event.target == popup)
+      popup.style.display = 'none';
+  };
+  let close = document.querySelector('.popup-chat__close');
+  close.onclick = function () {
     popup.style.display = 'none';
-  }
-}
+  };
+};

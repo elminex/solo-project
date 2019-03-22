@@ -9,6 +9,7 @@
     overflow-x: hidden;
     white-space: nowrap;
     z-index: 30;
+    transition: width, .3s;
     &__list {
         list-style: none;
         margin-bottom: 15px;
@@ -36,7 +37,7 @@
         max-height: 14px;
         margin-right: 16px;
     }
-    &__img-wrapper {
+    &__top-row {
         padding: 20px 10px;
         height: 63px;
         display: flex;
@@ -44,7 +45,11 @@
     }
     &__logo {
         padding: 0 8px;
-        display: none;
+        &-wrapper {
+            margin-left: -999px;
+            line-height: 23px;
+            transition: margin-left, 0.3s;
+        }
     }
     &__button {
         background-color: transparent;
@@ -81,28 +86,30 @@
             width: 30px;
             display: block;
             float:left;
-            margin-right: 10px;
-            
+            margin-right: 12px;
+            transition: width, 0.3s;
         }
         &-title {
             @include text(14px, 500, 42px, $color-grey);
             text-transform: uppercase;
-            display: none;
+            margin-left: -999px;
+            transition: margin-left, 0.3s;
         }
     }
     &--expand {
         width: $side-menu-mobile-expand-width;
-        .side-menu__logo {
-            display: block;
+        .side-menu__logo-wrapper {
+            margin-left: 0;
         }
         .side-menu__chat {
             padding-left: 18px;
         }
         .side-menu__chat-portrait {
-            width: auto;
+            transition: width, 0.3s;
+            width: 43px;
         }
         .side-menu__chat-title {
-            display: block;
+            margin-left: 0;
         }
         .side-menu__chat-dot {
             left: 34px;

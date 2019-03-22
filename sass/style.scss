@@ -80,6 +80,7 @@ body {
     margin-left: $side-menu-mobile-width;
     margin-top: 0;
     padding: 16px 18px 0;
+    transition: width, .3s;
 }
 @media (min-width: 992px) {
     .content {
