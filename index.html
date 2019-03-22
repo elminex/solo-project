@@ -167,8 +167,10 @@
             <section class="general" id="general-section">
                 <h2>general statistic</h2>
                     <div class="date-picker">
-                        <input class="date-picker__input" type="date" value="2016-05-16">
-                        <input class="date-picker__input" type="date" value="2016-05-16">
+                        <input class="date-picker__input date-picker__from" type="date" value="2016-05-16">
+                        <span class="date-picker__calendar-from"></span>
+                        <input class="date-picker__input date-picker__untill" type="date" value="2016-05-16">
+                        <span class="date-picker__calendar-untill"></span>
                         <button class="date-picker__button">
                             <svg class="date-picker__icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 viewBox="0 0 16 17" style="enable-background:new 0 0 16 17;" xml:space="preserve">
@@ -198,7 +200,8 @@
                     </div>
                     <h3>Earnings chart</h3>
                     <div class="general__chart-wrapper">
-                        <img class="general__chart" src="images/graph.png" alt="chart">
+                            <canvas id="general-chart"></canvas>
+                        <!--<img class="general__chart" src="images/graph.png" alt="chart">-->
                     </div>
                 </div>
             </section>
@@ -817,15 +820,15 @@
                     <ul class="personal-data__inputs">
                         <li>
                             <label>Name</label>
-                            <input type="text" name="user-name" placeholder="Leonardo">
+                            <input type="text" name="user-name" placeholder="Leonardo" required>
                         </li>
                         <li>
                             <label>Surname</label>
-                            <input type="text" name="user-surname" placeholder="Dicaprio">
+                            <input type="text" name="user-surname" placeholder="Dicaprio" required>
                         </li>
                         <li>
                             <label>E-mail</label>
-                            <input type="email" name="user-email" placeholder="leo@gmail.com">
+                            <input type="email" name="user-email" placeholder="leo@gmail.com" required>
                         </li>
                         <li>
                             <label>Phone</label>
@@ -855,11 +858,11 @@
                     <ul class="personal-data__inputs">
                         <li>
                             <label>Password</label>
-                            <input type="password" name="user-password">
+                            <input type="password" name="user-password" required>
                         </li>
                         <li>
                             <label>Repeat</label>
-                            <input type="password" name="user-pass-repeat">
+                            <input type="password" name="user-pass-repeat" required>
                         </li>
                     </ul>
                     <button class="personal-data__button" type="submit">Save</button>
@@ -1172,6 +1175,7 @@
               </form>
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
