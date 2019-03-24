@@ -1,0 +1,42 @@
+.animation-icons {
+    animation: icon-scale 0.8s;
+}
+
+@keyframes icon-scale {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    15% {
+        transform: scale3d(1.15, 1.15, 1);
+    }
+    30% {
+      transform: scale3d(1.35, 1.35, 1);
+    }
+    50% {
+      transform: scale3d(1.5, 1.5, 1);
+    }
+    65% {
+      transform: scale3d(1.35, 1.35, 1);
+    }
+    75% {
+      transform: scale3d(1.15, 1.15, 1);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+}
+
+.animation-pulse {
+    animation: pulse 0.5s infinite;
+}
+@keyframes pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    50% {
+      transform: scale3d(1.35, 1.35, 1.35);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }

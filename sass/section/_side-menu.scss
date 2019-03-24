@@ -19,10 +19,14 @@
             padding-left: 14px;
             border-left: 4px solid transparent;
             cursor: pointer;
+            transition: 0.3s;
             &:hover {
                 color: $color-white;
                 border-left: 4px solid $color-orange;
                 background-color: $color-dark-grey;
+            }
+            &:hover .side-menu__icon {
+                fill: $color-white;
             }
             &-link {
                 color: inherit;
@@ -58,7 +62,7 @@
         padding: 0 8px;
         cursor: pointer;
         &:hover {
-            background-color: $color-grey;
+            animation: pulse 0.8s infinite;
         }
     }
     &__hamburger {
@@ -81,6 +85,7 @@
             @include links('chat');
             cursor: pointer;
             position: relative;
+            transition: 0.3s;
         }
         &-portrait {
             width: 30px;
@@ -114,10 +119,12 @@
         .side-menu__chat-dot {
             left: 34px;
         }
+        .side-menu__chat-link {
+            &:hover {
+                background-color: $color-grey;
+            }
+        }
     }
-}
-@media (min-width: 768px) {
-
 }
 @media (min-width: 992px) {
     .side-menu {
@@ -128,7 +135,4 @@
             width: $side-menu-expand-width;
         }
     }
-}
-@media (min-width: 1200px) {
-
 }

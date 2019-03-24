@@ -7,9 +7,10 @@
         width: 100%;
         padding: 10px;
         border-radius: 3px;
+        transition: 0.3s;
         &:hover {
-        background-color: $color-background;
-        color: $color-black;
+            background-color: $color-background;
+            color: $color-black;
         }
         &:hover &-icon {
             visibility: visible;
@@ -29,7 +30,6 @@
         @include border1pxgrey('bottom');
         height: 60px;
         text-align: left;
-
     }
     & td {
         @include text(13px, lighter, 17px, $color-black);
@@ -37,8 +37,11 @@
         height: 60px;
         padding-left: 10px;
     }
-    & tr:not(:first-of-type):hover {
+    & tr {
+        transition: 0.3s;
+        &:not(:first-of-type):hover {
         background-color: $color-background;
+        }
     }
     &-wrapper {
         overflow-x: auto;

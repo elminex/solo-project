@@ -1,12 +1,22 @@
 // MENU
+
+let topMenu = document.querySelector('.top-menu');
+let content = document.querySelector('.content');
+let sideMenu = document.querySelector('.side-menu');
+let walletTrigger = document.querySelector('.top-menu__wallet');
+let notificationsTrigger = document.querySelector('.top-menu__notifications-bell');
+
+//set menu state and close sub menus on load and window resize,
 document.addEventListener('DOMContentLoaded', function () {
   setMenu();
 });
+
 window.addEventListener('resize', function () {
   setMenu();
-  document.querySelector('.top-menu__wallet').removeEventListener('click', walletToggle);
-  document.querySelector('.top-menu__notifications-bell').removeEventListener('click', notificationToggle);
+  walletListener('expanded');
+  notificationsListener('expanded');
 });
+
 function setMenu() {
   if (window.matchMedia("(min-width: 992px)").matches) {
     showMenu();
@@ -28,12 +38,12 @@ function hideMenu() {
   content.classList.add('content--margin');
 };
 
-let topMenu = document.querySelector('.top-menu');
-let content = document.querySelector('.content');
-let sideMenu = document.querySelector('.side-menu');
+
+// menu toggle and sub-menu toggle
 
 document.querySelector('.side-menu__button').addEventListener('click', function (e) {
   e.preventDefault();
+  iconAnimation();
   let state 
   if (sideMenu.classList.contains('side-menu--expand') === true) {
     state = 'expanded';
@@ -42,8 +52,10 @@ document.querySelector('.side-menu__button').addEventListener('click', function 
     state = 'small'
   }
   toggleMenu(state);
-  walletListener(state);
-  notificationsListener(state);
+  if (window.matchMedia("(max-width: 992px)").matches) {
+    walletListener(state);
+    notificationsListener(state);
+  }
 });
 
 function toggleMenu(state) {
@@ -55,24 +67,26 @@ function toggleMenu(state) {
       showMenu();
   };
 };
+
 function walletListener(state) {
   switch (state) {
     case 'small':
-      document.querySelector('.top-menu__wallet').addEventListener('click', walletToggle);
+      walletTrigger.addEventListener('click', walletToggle);
       break;
     case 'expanded':
       topMenu.classList.remove('top-menu--expand-wallet');
-      document.querySelector('.top-menu__wallet').removeEventListener('click', walletToggle);
+      walletTrigger.removeEventListener('click', walletToggle);
   };
 };
+
 function notificationsListener(state) {
   switch (state) {
     case 'small':
-      document.querySelector('.top-menu__notifications-bell').addEventListener('click', notificationToggle);
+      notificationsTrigger.addEventListener('click', notificationToggle);
       break;
     case 'expanded':
       topMenu.classList.remove('top-menu--expand-notifications');
-      document.querySelector('.top-menu__notifications-bell').removeEventListener('click', notificationToggle);
+      notificationsTrigger.removeEventListener('click', notificationToggle);
   };
 };
 
@@ -83,6 +97,25 @@ function walletToggle() {
   topMenu.classList.toggle('top-menu--expand-wallet');
 };
 
+
+// icons 
+
+function iconAnimation() {
+  let icons
+  if (window.matchMedia("(max-width: 992px)").matches) {
+    icons = document.querySelectorAll('.side-menu__icon, .top-menu__icon');
+  }
+  else {
+    icons = document.querySelectorAll('.side-menu__icon');
+  }
+  for (let i = 0; i < icons.length; i++) {
+    let iconsAll = icons[i];
+    iconsAll.classList.add('animation-icons');
+    iconsAll.addEventListener('animationend', function () {
+      iconsAll.classList.remove('animation-icons');
+    })
+  }
+}
 
 //    Range slider
 

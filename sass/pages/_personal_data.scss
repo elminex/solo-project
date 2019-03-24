@@ -28,6 +28,10 @@
         border-radius: 3px;
         outline: none;
         @include text(14px, lighter, 42px, $color-black);
+        &:focus {
+            outline: none;
+            border: 2px solid $color-light-orange;
+        }
     }
     &__button {
         @include button(95px, 'orange');
