@@ -20,8 +20,7 @@ window.addEventListener('resize', function () {
 function setMenu() {
   if (window.matchMedia("(min-width: 992px)").matches) {
     showMenu();
-  }
-  else {
+  } else {
     hideMenu();
   };
 };
@@ -38,17 +37,15 @@ function hideMenu() {
   content.classList.add('content--margin');
 };
 
-
 // menu toggle and sub-menu toggle
 
 document.querySelector('.side-menu__button').addEventListener('click', function (e) {
   e.preventDefault();
   iconAnimation();
-  let state 
+  let state
   if (sideMenu.classList.contains('side-menu--expand') === true) {
     state = 'expanded';
-  }
-  else {
+  } else {
     state = 'small'
   }
   toggleMenu(state);
@@ -93,6 +90,7 @@ function notificationsListener(state) {
 function notificationToggle() {
   topMenu.classList.toggle('top-menu--expand-notifications');
 };
+
 function walletToggle() {
   topMenu.classList.toggle('top-menu--expand-wallet');
 };
@@ -104,8 +102,7 @@ function iconAnimation() {
   let icons
   if (window.matchMedia("(max-width: 992px)").matches) {
     icons = document.querySelectorAll('.side-menu__icon, .top-menu__icon');
-  }
-  else {
+  } else {
     icons = document.querySelectorAll('.side-menu__icon');
   }
   for (let i = 0; i < icons.length; i++) {
@@ -113,47 +110,57 @@ function iconAnimation() {
     iconsAll.classList.add('animation-icons');
     iconsAll.addEventListener('animationend', function () {
       iconsAll.classList.remove('animation-icons');
-    })
-  }
-}
+    });
+  };
+};
 
 //    Range slider
 
 let sliders, sliderfills, thumbs, slidervalues;
 let initialValue = 104 //initial values for the sliders
 
-document.addEventListener('DOMContentLoaded', function (e) { init(); });
+document.addEventListener('DOMContentLoaded', function (e) {
+  init();
+});
 
-function init(){
+function init() {
   sliders = document.querySelector(".postback__range-input");
   sliderfills = document.querySelector(".sliderfill");
   thumbs = document.querySelector(".sliderthumb");
   slidervalues = document.querySelector(".slidervalue");
-  sliders.addEventListener("input",function(e){updateSlider(sliders.value);});
-  sliders.addEventListener("change",function(e){updateSlider(sliders.value);});
+  sliders.addEventListener("input", function (e) {
+    updateSlider(sliders.value);
+  });
+  sliders.addEventListener("change", function (e) {
+    updateSlider(sliders.value);
+  });
   sliders.value = initialValue;
   updateSlider(sliders.value);
-}
-function updateSlider(val){
+};
+
+function updateSlider(val) {
   let min = Number(sliders.getAttribute("min"));
   let max = Number(sliders.getAttribute("max"));
-  let pc = (val/(max-min)) * 100
-  setThumbText(slidervalues,val,pc);
-  setThumb(thumbs,pc);
-  setSliderFill(sliderfills,pc);
-}
-function setThumbText(elem,val,pc){
+  let pc = (val / (max - min)) * 100
+  setThumbText(slidervalues, val, pc);
+  setThumb(thumbs, pc);
+  setSliderFill(sliderfills, pc);
+};
+
+function setThumbText(elem, val, pc) {
   let size = 60;
   let newx = `calc(${pc}% - ${parseInt(size)/2}px)`;
   elem.style.left = newx;
   elem.innerHTML = val + ' hours';
-}
-function setThumb(elem,val){
+};
+
+function setThumb(elem, val) {
   let size = 22;
   let newx = `calc(${val}% - ${parseInt(size)/2}px)`;
   elem.style.left = newx;
-}
-function setSliderFill(elem,val){
+};
+
+function setSliderFill(elem, val) {
   let alphafillcolor = getComputedStyle(elem).getPropertyValue("color");
   let gradient = `linear-gradient(to right, 
 ${alphafillcolor} ${val}%, 
@@ -191,6 +198,7 @@ function openPopup(i) {
       closePopup(chatPopup);
   };
 };
+
 function closePopup(popup) {
   window.onclick = function (event) {
     if (event.target == popup)
@@ -211,23 +219,24 @@ var chart = new Chart(ctx, {
   data: {
     labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09"],
     datasets: [{
-      label: "Signups",
-      backgroundColor: '#8DBEC8',
-      borderColor: '#8DBEC8',
-      data: [350, 205, 220, 380, 420, 400, 310, 280, 300],
-    },
-    {
-      label: "FTD",
-      backgroundColor: '#F29E4E',
-      borderColor: '#F29E4E',
-      data: [400, 190, 300, 260, 440, 90, 210, 501, 320],
-    },
-    {
-      label: "Earned",
-      backgroundColor: '#71B374',
-      borderColor: '#71B374',
-      data: [59, 49, 68, 90, 67, 41, 13, 38, 48, 48],
-      hidden: true,
-    }]
+        label: "Signups",
+        backgroundColor: '#8DBEC8',
+        borderColor: '#8DBEC8',
+        data: [350, 205, 220, 380, 420, 400, 310, 280, 300],
+      },
+      {
+        label: "FTD",
+        backgroundColor: '#F29E4E',
+        borderColor: '#F29E4E',
+        data: [400, 190, 300, 260, 440, 90, 210, 501, 320],
+      },
+      {
+        label: "Earned",
+        backgroundColor: '#71B374',
+        borderColor: '#71B374',
+        data: [59, 49, 68, 90, 67, 41, 13, 38, 48, 48],
+        hidden: true,
+      }
+    ]
   },
 });
