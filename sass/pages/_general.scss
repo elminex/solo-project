@@ -30,12 +30,12 @@
             display: block;
             width: 100%;
             margin-bottom: 76px;
+            overflow-x: auto;
         }
     }
     &__chart-wrapper {
         width: 100%;
         max-width: 687px;
-        overflow-x: auto;
     }
     &__table:nth-of-type(1) {
         margin-right: 32px;

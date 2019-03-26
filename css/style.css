@@ -452,9 +452,9 @@ template { display: none; }
 
 .general__table-empty { width: 67px; }
 
-.general__table-wrapper { display: block; width: 100%; margin-bottom: 76px; }
+.general__table-wrapper { display: block; width: 100%; margin-bottom: 76px; overflow-x: auto; }
 
-.general__chart-wrapper { width: 100%; max-width: 687px; overflow-x: auto; }
+.general__chart-wrapper { width: 100%; max-width: 687px; }
 
 .general__table:nth-of-type(1) { margin-right: 32px; }
 
