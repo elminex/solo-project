@@ -7,21 +7,21 @@
     }
     &__inputs {
         list-style-type: none;
-        text-align: left;
+        text-align: center;
         padding: 18px 0;
         @include border1pxgrey('bottom');
-        & label {
+        label {
             width: 155px;
             @include text-section-header;
         }
-        & li {
+        li {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 15px;
         }
     }
-    & input {
+    input {
         width: 310px;
         padding-left: 16px;
         @include border1pxgrey('all');
@@ -35,5 +35,10 @@
     }
     &__button {
         @include button(95px, 'orange');
+    }
+}
+@media(min-width:570px) {
+    .personal-data__inputs {
+        text-align: left;
     }
 }

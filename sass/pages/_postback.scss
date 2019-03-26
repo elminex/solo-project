@@ -9,6 +9,7 @@
         max-width: 1056px;
         padding-top: 20px;
         margin: 0 auto;
+        flex-basis: 100%;
     }
     &__container {
         width: 100%;
@@ -101,7 +102,7 @@
         &-wrapper {
             @include border1pxgrey('top');
             text-align: right;
-            margin-right: 23px;
+            padding-right: 23px;
             padding-top: 18px;
         }
     }

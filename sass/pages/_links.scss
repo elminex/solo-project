@@ -28,9 +28,9 @@
             &:hover .links__icon {
                 visibility: visible;
             }
-        }
-        &-row td {
-            @include border1pxgrey('bottom');
+            td {
+                @include border1pxgrey('bottom');
+            }
         }
         &-wrapper {
             display: block;

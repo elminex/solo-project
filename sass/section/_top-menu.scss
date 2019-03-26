@@ -7,17 +7,26 @@
         list-style-type: none;
         &-item {
             margin: 0;
-            &.popup-trigger {
-                cursor: pointer;
-            }
         }
     }
-    &__user-tooltip {
+    &__user {
+        &-tooltip {
         display: none;
-    }
-    &__username {
-        @include links('small');
-        line-height: 42px;
+        }
+        &name {
+            @include links('small');
+            line-height: 42px;
+        }
+        &-button {
+            border: 0;
+            padding: 0;
+            width: 100%;
+            outline: none;
+            text-align: inherit;
+            line-height: inherit;
+            background-color: inherit;
+            cursor: pointer;
+        }
     }
     &__icon {
         width: 20px;
@@ -48,10 +57,17 @@
         &-close {
             display:none;
         }
-        &-bell {
+        &-button {
             position: relative;
             display: inline-block;
+            border: 0;
+            padding: 0;
             width: 100%;
+            outline: none;
+            text-align: inherit;
+            line-height: inherit;
+            background-color: inherit;
+            cursor: pointer;
             &-dot {
                 @include dot('orange');
                 position: absolute;
@@ -63,6 +79,17 @@
     &__wallet {
         @include text(20px, normal, 42px, $color-dark-grey);
         position: relative;
+        &-button {
+            border: 0;
+            padding: 0;
+            width: 100%;
+            outline: none;
+            text-align: inherit;
+            line-height: inherit;
+            background-color: inherit;
+            cursor: pointer;
+            color: inherit;
+        }
         &-list {
             visibility: hidden;
             transition: 0.3s;
@@ -88,8 +115,17 @@
     &__arrow-down {
         display: none;
     }
-    &__exit {
-        cursor: pointer;
+    &__logout {
+        &-button {
+            border: 0;
+            padding: 0;
+            width: 100%;
+            outline: none;
+            text-align: inherit;
+            line-height: inherit;
+            background-color: inherit;
+            cursor: pointer;
+        }
         &-tooltip {
             display: none;
         }
@@ -133,13 +169,10 @@
             }
         }
         &__user {
-            cursor: pointer;
-            &-wrap {
-                position: relative;
-                &:hover .top-menu__user-tooltip {
-                    visibility: visible;
-                    opacity: 1;
-                }
+            position: relative;
+            &:hover .top-menu__user-tooltip {
+                visibility: visible;
+                opacity: 1;
             }
             &name {
                 position: relative;
@@ -167,10 +200,10 @@
         }
         &__notifications {
             position: relative;
-            &:hover &-bell-dot {
+            &:hover &-button-dot {
                 visibility: hidden;
             }
-            &:hover ~ .top-menu__user-wrap {
+            &:hover ~ .top-menu__user {
                 visibility: hidden;
                 position: absolute;
             }
@@ -188,7 +221,7 @@
                 position: absolute;
                 transition: 0.3s;
             }
-            &-bell {
+            &-button {
                 &-dot {
                     position: absolute;
                     top: 15px;
@@ -223,9 +256,9 @@
         &__arrow-down {
             display: inline-block;
         }
-        &__exit {
+        &__logout {
             position: relative;
-            &:hover .top-menu__exit-tooltip {
+            &:hover .top-menu__logout-tooltip {
                 visibility: visible;
                 opacity: 1;
             }

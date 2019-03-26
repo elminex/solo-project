@@ -25,19 +25,19 @@
             margin-right: 10px;
         }
     }
-    & th {
+    th {
         @include text(13px, bold, 15px, $color-grey);
         @include border1pxgrey('bottom');
         height: 60px;
         text-align: left;
     }
-    & td {
+    td {
         @include text(13px, lighter, 17px, $color-black);
         @include border1pxgrey('bottom');
         height: 60px;
         padding-left: 10px;
     }
-    & tr {
+    tr {
         transition: 0.3s;
         &:not(:first-of-type):hover {
         background-color: $color-background;
@@ -45,5 +45,6 @@
     }
     &-wrapper {
         overflow-x: auto;
+        padding: 0 18px;
     }
 }

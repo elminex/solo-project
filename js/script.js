@@ -1,10 +1,10 @@
 // MENU
 
-let topMenu = document.querySelector('.top-menu');
-let content = document.querySelector('.content');
-let sideMenu = document.querySelector('.side-menu');
-let walletTrigger = document.querySelector('.top-menu__wallet');
-let notificationsTrigger = document.querySelector('.top-menu__notifications-bell');
+const topMenu = document.querySelector('.top-menu');
+const content = document.querySelector('.content');
+const sideMenu = document.querySelector('.side-menu');
+const walletTrigger = document.querySelector('.top-menu__wallet');
+const notificationsTrigger = document.querySelector('.top-menu__notifications-button');
 
 //set menu state and close sub menus on load and window resize,
 document.addEventListener('DOMContentLoaded', function () {
@@ -114,64 +114,9 @@ function iconAnimation() {
   };
 };
 
-//    Range slider
-
-let sliders, sliderfills, thumbs, slidervalues;
-let initialValue = 104 //initial values for the sliders
-
-document.addEventListener('DOMContentLoaded', function (e) {
-  init();
-});
-
-function init() {
-  sliders = document.querySelector(".postback__range-input");
-  sliderfills = document.querySelector(".sliderfill");
-  thumbs = document.querySelector(".sliderthumb");
-  slidervalues = document.querySelector(".slidervalue");
-  sliders.addEventListener("input", function (e) {
-    updateSlider(sliders.value);
-  });
-  sliders.addEventListener("change", function (e) {
-    updateSlider(sliders.value);
-  });
-  sliders.value = initialValue;
-  updateSlider(sliders.value);
-};
-
-function updateSlider(val) {
-  let min = Number(sliders.getAttribute("min"));
-  let max = Number(sliders.getAttribute("max"));
-  let pc = (val / (max - min)) * 100
-  setThumbText(slidervalues, val, pc);
-  setThumb(thumbs, pc);
-  setSliderFill(sliderfills, pc);
-};
-
-function setThumbText(elem, val, pc) {
-  let size = 60;
-  let newx = `calc(${pc}% - ${parseInt(size)/2}px)`;
-  elem.style.left = newx;
-  elem.innerHTML = val + ' hours';
-};
-
-function setThumb(elem, val) {
-  let size = 22;
-  let newx = `calc(${val}% - ${parseInt(size)/2}px)`;
-  elem.style.left = newx;
-};
-
-function setSliderFill(elem, val) {
-  let alphafillcolor = getComputedStyle(elem).getPropertyValue("color");
-  let gradient = `linear-gradient(to right, 
-${alphafillcolor} ${val}%, 
-rgba(255,255,255,0.1) ${Number(val) + 1}%, 
-rgba(255,255,255,0)  100%)`;
-  elem.style.backgroundImage = gradient;
-};
-
 // popups
 
-let popupTriggers = document.querySelectorAll('.popup-trigger');
+const popupTriggers = document.querySelectorAll('.popup-trigger');
 for (let i = 0; i < popupTriggers.length; i++) {
   let trigger = popupTriggers[i];
   trigger.addEventListener('click', function () {
@@ -180,9 +125,9 @@ for (let i = 0; i < popupTriggers.length; i++) {
 };
 
 function openPopup(i) {
-  let loginPopup = document.querySelector('#login');
-  let logoutPopup = document.querySelector('#logout');
-  let chatPopup = document.querySelector('#chat');
+  const loginPopup = document.querySelector('#login');
+  const logoutPopup = document.querySelector('#logout');
+  const chatPopup = document.querySelector('#chat');
   let trigger = popupTriggers[i].getAttribute('id');
   switch (trigger) {
     case 'login-trigger':
@@ -204,39 +149,8 @@ function closePopup(popup) {
     if (event.target == popup)
       popup.style.display = 'none';
   };
-  let close = document.querySelector('.popup-chat__close');
+  const close = document.querySelector('.popup-chat__close');
   close.onclick = function () {
     popup.style.display = 'none';
   };
 };
-
-
-// CHART 
-var ctx = document.getElementById('general-chart').getContext('2d');
-
-var chart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09"],
-    datasets: [{
-        label: "Signups",
-        backgroundColor: '#8DBEC8',
-        borderColor: '#8DBEC8',
-        data: [350, 205, 220, 380, 420, 400, 310, 280, 300],
-      },
-      {
-        label: "FTD",
-        backgroundColor: '#F29E4E',
-        borderColor: '#F29E4E',
-        data: [400, 190, 300, 260, 440, 90, 210, 501, 320],
-      },
-      {
-        label: "Earned",
-        backgroundColor: '#71B374',
-        borderColor: '#71B374',
-        data: [59, 49, 68, 90, 67, 41, 13, 38, 48, 48],
-        hidden: true,
-      }
-    ]
-  },
-});
