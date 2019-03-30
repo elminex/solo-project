@@ -108,30 +108,6 @@
             transition: margin-left, 0.3s;
         }
     }
-    &--expand {
-        width: $side-menu-mobile-expand-width;
-        .side-menu__logo-wrapper {
-            margin-left: 0;
-        }
-        .side-menu__chat {
-            padding-left: 18px;
-        }
-        .side-menu__chat-portrait {
-            transition: width, 0.3s;
-            width: 43px;
-        }
-        .side-menu__chat-title {
-            margin-left: 0;
-        }
-        .side-menu__chat-dot {
-            left: 34px;
-        }
-        .side-menu__chat-link {
-            &:hover {
-                background-color: $color-grey;
-            }
-        }
-    }
 }
 @media (min-width: 992px) {
     .side-menu {

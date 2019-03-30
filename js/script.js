@@ -1,8 +1,4 @@
 // MENU
-
-const topMenu = document.querySelector('.top-menu');
-const content = document.querySelector('.content');
-const sideMenu = document.querySelector('.side-menu');
 const walletTrigger = document.querySelector('.top-menu__wallet');
 const notificationsTrigger = document.querySelector('.top-menu__notifications-button');
 
@@ -13,28 +9,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.addEventListener('resize', function () {
   setMenu();
-  walletListener('expanded');
-  notificationsListener('expanded');
 })
 
 function setMenu() {
   if (window.matchMedia("(min-width: 992px)").matches) {
     showMenu();
+    walletTrigger.removeEventListener('click', toggleWallet)
+    notificationsTrigger.removeEventListener('click', toggleNotifications);
   } else {
     hideMenu();
+    walletTrigger.addEventListener('click', toggleWallet)
+    notificationsTrigger.addEventListener('click', toggleNotifications);
   }
 }
 
 function showMenu() {
-  topMenu.classList.remove('top-menu--expand');
-  sideMenu.classList.add('side-menu--expand');
-  content.classList.remove('content--margin');
+  document.body.classList.add('show-menu');
 }
 
 function hideMenu() {
-  topMenu.classList.add('top-menu--expand');
-  sideMenu.classList.remove('side-menu--expand');
-  content.classList.add('content--margin');
+  document.body.classList.remove('show-menu', 'expand-notifications', 'expand-wallet');
 }
 
 // menu toggle and sub-menu toggle
@@ -42,17 +36,11 @@ function hideMenu() {
 document.querySelector('.side-menu__button').addEventListener('click', function (e) {
   e.preventDefault();
   iconAnimation();
-  let state;
-  if (sideMenu.classList.contains('side-menu--expand') === true) {
+  let state = 'small';
+  if (document.body.classList.contains('show-menu')) {
     state = 'expanded';
-  } else {
-    state = 'small'
   }
   toggleMenu(state);
-  if (window.matchMedia("(max-width: 992px)").matches) {
-    walletListener(state);
-    notificationsListener(state);
-  }
 })
 
 function toggleMenu(state) {
@@ -65,37 +53,15 @@ function toggleMenu(state) {
   }
 }
 
-function walletListener(state) {
-  switch (state) {
-    case 'small':
-      walletTrigger.addEventListener('click', walletToggle);
-      break;
-    case 'expanded':
-      topMenu.classList.remove('top-menu--expand-wallet');
-      walletTrigger.removeEventListener('click', walletToggle);
-  }
+function toggleWallet() {
+  document.body.classList.toggle('expand-wallet');
+  showMenu();
 }
 
-function notificationsListener(state) {
-  switch (state) {
-    case 'small':
-      notificationsTrigger.addEventListener('click', notificationToggle);
-      break;
-    case 'expanded':
-      topMenu.classList.remove('top-menu--expand-notifications');
-      notificationsTrigger.removeEventListener('click', notificationToggle);
-  }
+function toggleNotifications() {
+  document.body.classList.toggle('expand-notifications');
+  showMenu();
 }
-
-function notificationToggle() {
-  topMenu.classList.toggle('top-menu--expand-notifications');
-}
-
-function walletToggle() {
-  topMenu.classList.toggle('top-menu--expand-wallet');
-}
-
-
 // icons 
 
 function iconAnimation() {
@@ -138,13 +104,11 @@ function closePopup(popup) {
   }
   const close = document.querySelector('.popup-chat__close');
   close.onclick = function () {
-    popup.classList.remove('show')
+    popup.classList.remove('show');
   }
+  document.addEventListener('keyup', function(event) {
+    if(event.keyCode === 27) {
+      popup.classList.remove('show');
+    }
+  })
 }
-
-/*
-
-//jedna klasa do otwierania wallet i notifications
-//popup triggers i notification triggers
-
-*/

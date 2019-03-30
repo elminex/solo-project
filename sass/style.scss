@@ -55,6 +55,49 @@ p {
 
 body {
     background-color: $color-background-dark;
+    &.show-menu {
+        .content {
+        margin-left: $side-menu-mobile-expand-width;
+        }
+        .side-menu {
+            width: $side-menu-mobile-expand-width;
+        }
+        .side-menu__logo-wrapper {
+            margin-left: 0;
+        }
+        .side-menu__chat {
+            padding-left: 18px;
+        }
+        .side-menu__chat-portrait {
+            transition: width, 0.3s;
+            width: 43px;
+        }
+        .side-menu__chat-title {
+            margin-left: 0;
+        }
+        .side-menu__chat-dot {
+            left: 34px;
+        }
+        .side-menu__chat-link {
+            &:hover {
+                background-color: $color-grey;
+            }
+        }
+        &.expand {
+            &-notifications .top-menu__notifications-list {
+                visibility: visible;
+                opacity: 1;
+                max-height: 200px;
+                padding: 10px 18px 22px;
+            };
+            &-wallet .top-menu__wallet-list {
+                visibility: visible;
+                opacity: 1;
+                max-height: 200px;
+                padding: 10px 18px 22px;
+            }
+        }
+    }
 }
 
 .content {
@@ -82,11 +125,20 @@ body {
 }
 
 @media (min-width: 992px) {
-    .content {
-        margin-left: $side-menu-expand-width;
+        .content {
+        margin-left: $side-menu-mobile-width;
         margin-top: 60px;
-        &--margin {
-            margin-left: $side-menu-mobile-width;
+    }
+    body.show-menu {
+        .content {
+            margin-left: $side-menu-expand-width;
+        }
+        .side-menu {
+            width: $side-menu-expand-width;
+        }
+        .top-menu {
+            width: calc(100% - #{$side-menu-expand-width});
+            margin-left: $side-menu-expand-width;
         }
     }
 }

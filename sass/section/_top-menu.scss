@@ -131,28 +131,14 @@
         }
     }
 }
-.top-menu--expand {
-    &-notifications .top-menu__notifications-list {
-        visibility: visible;
-        opacity: 1;
-        max-height: 200px;
-        padding: 10px 18px 22px;
-    };
-    &-wallet .top-menu__wallet-list {
-        visibility: visible;
-        opacity: 1;
-        max-height: 200px;
-        padding: 10px 18px 22px;
-    }
-}
 
 @media (min-width: 992px) {
     .top-menu {
         position: fixed;
         top: 0;
-        margin-left: $side-menu-expand-width;
+        margin-left: $side-menu-mobile-width;
         background-color: $color-white;
-        width: calc(100% - #{$side-menu-expand-width});
+        width: calc(100% - #{$side-menu-mobile-width});
         border-bottom: 1px solid $color-light-grey;
         &__list {
             display: flex;
@@ -279,24 +265,6 @@
                 z-index: 99;
                 transition: 0.3s;
             }
-        }
-        &--expand {
-        width: calc(100% - #{$side-menu-mobile-width});
-        margin-left: $side-menu-mobile-width;
-        }
-    }
-    .top-menu--expand {
-        &-notifications .top-menu__notifications-list {
-            visibility: hidden;
-            opacity: 0;
-            max-height: 200px;
-            padding: 10px 18px 22px;
-        };
-        &-wallet .top-menu__wallet-list {
-            visibility: hidden;
-            opacity: 0;
-            max-height: 200px;
-            padding: 10px 18px 22px;
         }
     }
 }
