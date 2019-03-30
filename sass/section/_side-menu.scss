@@ -75,6 +75,8 @@
         padding: 12px 18px 12px 12px;
         border-top: 2px solid $color-dark-grey;
         letter-spacing: -0.28px;
+        display: flex;
+        flex-direction: column;
         &-dot {
             @include dot('green');
             position: absolute;
@@ -86,6 +88,11 @@
             cursor: pointer;
             position: relative;
             transition: 0.3s;
+            padding: 0;
+            outline: none;
+            margin: 0;
+            border: none;
+            background-color: inherit;
         }
         &-portrait {
             width: 30px;
