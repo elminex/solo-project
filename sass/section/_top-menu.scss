@@ -35,6 +35,14 @@
         margin: 0 18px;
     }
     &__notifications {
+        &.show {
+            .top-menu__notifications-list {
+                visibility: visible;
+                opacity: 1;
+                max-height: 200px;
+                padding: 10px 18px 22px;
+            }
+        }
         &-link {
             @include links(12px);
         }
@@ -106,6 +114,14 @@
             &-amount {
                 color: $color-black;
                 margin-left: auto;
+            }
+        }
+        &.show {
+            .top-menu__wallet-list {
+                visibility: visible;
+                opacity: 1;
+                max-height: 200px;
+                padding: 10px 18px 22px;
             }
         }
     }
@@ -197,11 +213,11 @@
                 display: inline-block;
             }
             &:hover .top-menu__notifications-list {
-            visibility: visible;
-            opacity: 1;
-            max-height: 200px;
-            padding: 10px 18px 22px;
-            width: 237px;
+                visibility: visible;
+                opacity: 1;
+                max-height: 200px;
+                padding: 10px 18px 22px;
+                width: 237px;
             }
             &-list {
                 position: absolute;

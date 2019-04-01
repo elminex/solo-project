@@ -1,8 +1,5 @@
-// MENU
-const walletTrigger = document.querySelector('.top-menu__wallet');
-const notificationsTrigger = document.querySelector('.top-menu__notifications-button');
+//set menu state
 
-//set menu state and close sub menus on load and window resize,
 document.addEventListener('DOMContentLoaded', function () {
   setMenu();
 })
@@ -13,22 +10,10 @@ window.addEventListener('resize', function () {
 
 function setMenu() {
   if (window.matchMedia("(min-width: 992px)").matches) {
-    showMenu();
-    walletTrigger.removeEventListener('click', toggleWallet)
-    notificationsTrigger.removeEventListener('click', toggleNotifications);
+    document.body.classList.add('show-menu');
   } else {
-    hideMenu();
-    walletTrigger.addEventListener('click', toggleWallet)
-    notificationsTrigger.addEventListener('click', toggleNotifications);
+    document.body.classList.remove('show-menu');
   }
-}
-
-function showMenu() {
-  document.body.classList.add('show-menu');
-}
-
-function hideMenu() {
-  document.body.classList.remove('show-menu', 'expand-notifications', 'expand-wallet');
 }
 
 // menu toggle and sub-menu toggle
@@ -36,32 +21,40 @@ function hideMenu() {
 document.querySelector('.side-menu__button').addEventListener('click', function (e) {
   e.preventDefault();
   iconAnimation();
-  let state = 'small';
-  if (document.body.classList.contains('show-menu')) {
-    state = 'expanded';
+  document.body.classList.toggle('show-menu');
+  if (dropdownOpen > 0) {
+    closeDropdowns();
   }
-  toggleMenu(state);
 })
 
-function toggleMenu(state) {
-  switch (state) {
-    case 'expanded':
-      hideMenu();
-      break;
-    case 'small':
-      showMenu();
+let dropdownOpen = 0;
+const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+for (let i = 0; i < dropdownTriggers.length; i++) {
+  const trigger = dropdownTriggers[i];
+  trigger.addEventListener('click', function (event) {
+    if (window.matchMedia("(max-width: 992px)").matches) {
+      let button = event.currentTarget;
+      if (button.parentElement.classList.contains('show')) {
+        button.parentElement.classList.remove('show');
+        dropdownOpen -= 1;
+      }
+      else {
+        button.parentElement.classList.add('show');
+        dropdownOpen += 1;
+        document.body.classList.add('show-menu');
+      }
+    }
+  })
+}
+
+function closeDropdowns() {
+  for (let i = 0; i < dropdownTriggers.length; i++) {
+    const trigger = dropdownTriggers[i];
+    trigger.parentElement.classList.remove('show');
+    dropdownOpen = 0;
   }
 }
 
-function toggleWallet() {
-  document.body.classList.toggle('expand-wallet');
-  showMenu();
-}
-
-function toggleNotifications() {
-  document.body.classList.toggle('expand-notifications');
-  showMenu();
-}
 // icons 
 
 function iconAnimation() {
